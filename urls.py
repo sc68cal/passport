@@ -12,10 +12,13 @@ authority.autodiscover()
 urlpatterns = patterns('',
     (r'^authority/', include('authority.urls')),
     (r'^i18n/', include('django.conf.urls.i18n')),
+    (r'^passport/', include('passport.urls')),
     (r'^admin/', include(admin.site.urls)),
     # Trick for Django to support static files
     # (security hole: only for Dev environement! remove this on Prod!!!)
     (r'', include('staticfiles.urls')),
+
+
     
     (r'^', include('pages.urls')),
     
