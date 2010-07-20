@@ -1,0 +1,11 @@
+{% extends 'passport/base.html' %}
+
+{%block body %}
+
+<div id="list" >
+	{% for event in object_list %}
+		{{ event }}
+	{% endfor %}
+</div>
+
+{% endblock %}

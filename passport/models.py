@@ -1,24 +1,21 @@
 from django.db import models
-import Image
+import Image 
 from django.contrib.auth.models import User, UserManager
-
-
 
 class Venue(models.Model):
 	name = models.CharField(max_length=255)
-	google_map_url = models.CharField(max_length=255)
+	address = models.CharField(max_length=255)
 	description = models.CharField(max_length=255)
 	hours = models.CharField(max_length=255)
 	#phone = models.PhoneNumberField()
-	#img = models.ImageField(upload_to="venues")
+	#pic = models.ImageField(upload_to="venues")
 
 	def __unicode__(self):
 		return self.name
 
+	def apiaddr(self):
+		return self.address.replace(" ","+")
 
-
-
-# Create your models here.
 class Event(models.Model):
 	venue = models.ForeignKey(Venue)
 	date = models.DateTimeField()

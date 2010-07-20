@@ -1,0 +1,24 @@
+{% extends 'passport/base.html' %}
+
+{% block head %}
+
+
+{% endblock %}
+{%block body %}
+
+	{% for venue in object_list %}
+	<div id='map_{{venue.id}}' class="venuemap">
+		
+		{{ venue }}
+		<a href="http://maps.google.com/maps?&q={{venue.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{venue.apiaddr}}&size=200x200&sensor=false
+"/></a>
+	</div>
+	{% endfor %}
+{% endblock %}
+
+{% block footer %}
+
+
+<body onload="initialize()">
+
+{% endblock %}
