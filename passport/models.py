@@ -5,16 +5,23 @@ from django.contrib.auth.models import User, UserManager
 class Venue(models.Model):
 	name = models.CharField(max_length=255)
 	address = models.CharField(max_length=255)
-	description = models.CharField(max_length=255)
-	hours = models.CharField(max_length=255)
-	#phone = models.PhoneNumberField()
+	city = models.CharField(max_length=255)
+	state = models.CharField(max_length=2)
+	zip = models.CharField(max_length=5)
+	about_text= models.CharField(max_length=1024)
+	student_perspectives_text = models.CharField(max_length=1024)
+	weekday_hours = models.CharField(max_length=255)
+	weekend_hours = models.CharField(max_length=255)
+	phone = models.CharField(max_length=10)
+	cost = models.DecimalField(max_digits=5,decimal_places=2)
+	url = models.CharField(max_length=1024)
 	#pic = models.ImageField(upload_to="venues")
 
 	def __unicode__(self):
 		return self.name
 
 	def apiaddr(self):
-		return self.address.replace(" ","+")
+		return self.address.replace(" ","+") + "+" + self.city.replace(" ","+") + "+" + self.state + "+" + self.zip
 
 class Event(models.Model):
 	venue = models.ForeignKey(Venue)
