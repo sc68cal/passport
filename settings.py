@@ -183,9 +183,9 @@ COVERAGE_EXCLUDE_MODULES = (
 COVERAGE_HTML_REPORT = True
 COVERAGE_BRANCH_COVERAGE = False
 
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
+#
+#try:
+#    from local_settings import *
+#except ImportError:
+#    pass
 

@@ -1,0 +1,38 @@
+ {% extends "passport/base.html" %}
+ {% block rightcolsub%}
+	</p> <h3>Directions</h3>
+	 <a href="http://maps.google.com/maps?&q={{object.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{object.apiaddr}}&size=220x220&sensor=false
+"/></a>
+{%endblock%}
+{%block leftcolsub %}
+<h1>{{object.name}}</h1>
+	<div id="vencolright">
+		<h3>Hours of Operation</h3>
+		<p>Monday-Friday: 9am-5pm<br/>
+		Saturday-Sunday: 11am-4pm</p>
+		<h3>Cost</h3>
+		<p>Varies.</p></div>
+		<div id="vencolleft">
+			<div id="venuepic">
+				<img src="media/article_temp.jpg" border="0" width="220" height="220"/>
+			</div>
+		215-555-5555<br/>
+	<a href="#">http://www.venueurl.com</a>
+	<h3>Location</h3>
+	<p>
+		{{object.address}}
+	</p>
+ <p><br class="clearfloat" />
+	</p> 
+	 <h3>About</h3>
+		
+	<p>
+
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in leo justo, et venenatis odio. Vivamus nibh arcu, porttitor ac vulputate a, condimentum quis orci. Integer ut sapien ante. Proin convallis, dui a tincidunt mollis, neque dui mollis neque, quis tincidunt quam ante ut mi. Nunc justo quam, eleifend quis dapibus sit amet, ultrices eu ante. Integer at urna id odio placerat elementum. Nulla a pharetra nisi. In hac habitasse platea dictumst. Donec nec tincidunt massa. Nullam scelerisque elit nec sapien pretium sit amet mattis quam ullamcorper.
+</p><p>
+Etiam dapibus faucibus eros, vitae fermentum sapien dictum quis. Maecenas velit ipsum, dignissim feugiat eleifend ac, commodo vitae lectus. Sed blandit dolor nec nisl ullamcorper semper. Donec tempus viverra augue quis dignissim. Suspendisse placerat placerat augue non ornare. Mauris mattis, eros ac eleifend auctor, neque odio blandit diam, quis ultrices neque felis ut velit. Ut ultrices pulvinar porttitor. Donec eget tellus id est aliquet condimentum eget id sapien. Donec non diam et metus tempor semper vitae vitae eros. Vivamus eget mi vitae diam euismod dictum vel ut nunc. Suspendisse potenti. Suspendisse condimentum, tellus eu venenatis bibendum, quam dui semper augue, at facilisis urna nisl eu urna. Nullam eu quam eget quam faucibus aliquet. Curabitur a augue tellus. Aliquam mi nisl, vehicula sit amet feugiat auctor, molestie id libero. Morbi sit amet odio sit amet nulla congue venenatis. Praesent ac justo vitae orci fermentum luctus non eu mauris. Cras ultricies condimentum nulla, id adipiscing magna fringilla eget. </p>
+<h3>Student Perspectives</h3>
+<p>Etiam dapibus faucibus eros, vitae fermentum sapien dictum quis. Maecenas velit ipsum, dignissim feugiat eleifend ac, commodo vitae lectus. Sed blandit dolor nec nisl ullamcorper semper. Donec tempus viverra augue quis dignissim. Suspendisse placerat placerat augue non ornare. Mauris mattis, eros ac eleifend auctor, neque odio blandit diam, quis ultrices neque felis ut velit. Ut ultrices pulvinar porttitor. Donec eget tellus id est aliquet condimentum eget id sapien. Donec non diam et metus tempor semper vitae vitae eros. Vivamus eget mi vitae diam euismod dictum vel ut nunc. Suspendisse potenti. Suspendisse condimentum, tellus eu venenatis bibendum, quam dui semper augue, at facilisis urna nisl eu urna. Nullam eu quam eget quam faucibus aliquet. Curabitur a augue tellus. Aliquam mi nisl, vehicula sit amet feugiat auctor, molestie id libero. Morbi sit amet odio sit amet nulla congue venenatis. Praesent ac justo vitae orci fermentum luctus non eu mauris. Cras ultricies condimentum nulla, id adipiscing magna fringilla eget. </p></div>
+
+	<!-- end #mainContent -->
+{% endblock %}

@@ -14,7 +14,8 @@ def venue_detail(request, object_id):
 		extra_context={"title":"Drexel Passport: "+str(venue)}
 
 	)
-
+def foo():
+	pass
 def event_detail(request, object_id):
 	event = get_object_or_404(Event, pk=object_id)
 

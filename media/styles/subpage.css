@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Subpage Stylesheet */
+
+#rightcolsub {
+	float: right; /* since this element is floated, a width must be given */
+	width: 230px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #ffffff; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 10px;
+	margin:0px;
+	border-left:1px solid #bfbfbf;
+}
+#rightcolsub h3 {
+	color:#012861;
+	font-weight:bold;
+}
+#rightcolsub a, #rightcolsub a:link, #rightcolsub a:visited { /*linked events in blue box*/
+	font-weight:bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000;
+}
+#rightcolsub a:hover, #rightcolsub a:active {
+	text-decoration:underline;
+}
+
+#leftcolsub {
+	margin: 0 275px 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+#leftcolsub p {
+	font-size: 12px;
+}
+#leftcolsub h1 {
+	color:#012861;
+	font-weight:normal;
+}
+#leftcolsub h3 {
+	color:#012861;
+	font-weight:normal;
+	margin-top:10px;
+}
+#vencolleft{
+margin: 0 0px 0 0; 	
+padding: 0 20px;
+}
+#vencolright{
+	float:right;
+	width:185px;
+	
+	margin:0px;
+}
+
+
+#subticheader {/*Colored block header with category ARTS*/
+
+	width:200px;
+	background: #f7941e;
+	
+	padding:6px;
+	margin-bottom:10px;
+}
+#subticheader a, #subticheader a:link, #subticheader a:visited { /*linked events in blue box*/
+	font-weight:normal;
+	font-size: 16px;
+	text-decoration: none;
+	color: #fff;
+}
+#subticheader a:hover, #subticheader a:active {
+	text-decoration:underline;
+}
+#subticlist{
+	margin-top:20px;
+	border-bottom:1px solid #bfbfbf;
+	width:210px;
+}
+#subticlist p{
+	font-size:10px;
+}
+#venuepic {
+	margin:0px 20px 15px 0px;/*T, R, B, L*/
+	float:left;
+}
+#related ul{
+	margin:0px 0px 0px -25px;/*T, R, B, L*/
+	
+}
+#related a, #related a:link, #related a:visited { /*linked events in blue box*/
+	font-weight:bold;
+	font-size: 11px;
+	text-decoration: none;
+	color: #000;
+}
+#related a:hover, #related a:active {
+	text-decoration:underline;
+}

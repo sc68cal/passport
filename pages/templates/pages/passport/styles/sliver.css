@@ -1,0 +1,131 @@
+/* -------------------- SLIVER -------------------- */
+.logo
+{
+	position: absolute;
+	margin-left: 12px;
+	margin-top: 0px;
+	z-index: 50000;
+}
+.sliver-logo
+{
+	position: absolute;
+	margin-left: 12px;
+	margin-top: 0px;
+	z-index: 50000;
+}
+#utility-bar-sliver {
+	background: #6e90af url(../images/utility-bar-bg.jpg) repeat-y left top;
+	padding: 3px 5px 3px 80px;
+	font-family: Arial,Helvetica,sans-serif;
+}
+#utility-bar-sliver input.search-box {
+	padding-top: 2px;
+}
+#utility-bar-sliver img.nudge 
+{
+	margin-bottom:-5px;
+}
+* html #utility-bar-sliver img.nudge 
+{
+	margin-bottom: -4px;	
+}
+#utility-bar-sliver a {
+	text-decoration: none;
+	font-size: 85%;
+	font-family:Verdana,Helvetica,Arial,"san serif";
+	color: white;
+	border-left: solid 1px #8b8b9b;
+	margin: 5px 0px 5px 4px;
+	padding-left: 6px;
+	background-color: transparent;
+}
+#utility-bar-sliver a:hover, #utility-bar-sliver a:active {
+	color: #ffcc00 !important;
+}
+#utility-bar-sliver a.none {
+	border-left-style: none;
+	padding-left: 0px;
+	margin-left: 0px;
+}
+#utility-bar-sliver a.tight {
+	margin: 0px;
+	padding: 0px;
+}
+#utility-bar-sliver input {
+	background-color: #e4e4ec;
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana,sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+#utility-bar-sliver select {
+	background-color: #e4e4ec;
+	font-family: Verdana,sans-serif;
+	color: #333333;
+	margin: 0px;
+	font-size: 11px;
+	padding: 0px;
+}
+#utility-bar-sliver ul.general-links {
+	float: right;
+	margin: 0px;
+	margin-top: 3px;
+	padding: 0px;
+}
+#utility-bar-sliver ul.general-links li {
+	display: inline;
+	list-style-type: none;
+}
+#utility-bar-sliver ul.general-links li a {
+	border-left-color: #a9bcc7;
+}
+.micro-site-sliver-divider {
+	background:transparent url(../images/micro-site-sliver-divider.gif) no-repeat scroll left bottom;
+	clear:both;
+	height:2px;
+}
+
+/* -------------------- FOOTER -------------------- */
+
+#footer  {
+	background: transparent url(../images/footer-background.gif) repeat-x scroll left top;
+	color:#333333;
+	font-size: 0.8em;
+	margin:0;
+	padding: 6px 3px;
+	text-align:center;
+	position: relative;
+}
+
+
+
+#footer img.du, #footer img.live-it {
+	border-width:0;
+	position:absolute;
+	top:6px;
+}
+#footer img.du {
+	right:862px;
+}
+#footer img.live-it {
+	right:15px;
+}
+#footer p {
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.content-footer-separator {
+	background: #ffffff url(../images/content-footer-separator.png) no-repeat scroll left top;
+	height:2px;
+}
+
+/* -------------------- GENERAL -------------------- */
+
+.clear
+{
+	clear: both;
+	float: none;
+}
+

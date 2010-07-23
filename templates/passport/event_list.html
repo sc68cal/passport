@@ -1,10 +1,11 @@
 {% extends 'passport/base.html' %}
 
-{%block body %}
+{%block mainContent %}
 
 <div id="list" >
 	{% for event in object_list %}
-		{{ event }}
+		<a href="{% url passport.views.event_detail event.id %}">{{ event }}</a>
+		
 	{% endfor %}
 </div>
 

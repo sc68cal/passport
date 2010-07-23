@@ -1,0 +1,564 @@
+﻿/* Main Home Stylesheet */
+
+html {
+	height:100%;
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;
+	width:100%;
+	height:100%;
+	font-size: .85em;
+	margin: 0;
+	color: #000000;
+	background-color: #c9caca;
+}
+#MainPanel {
+	background:#e9e9e9;
+	text-align:center;
+	height:100%;
+}
+#CenterColumn {
+	text-align:left;
+	margin:auto;
+	width:800px;
+}
+#Banner {
+	background:white;
+	border-bottom:1px solid #bfbfbf;
+	padding:8px;
+}
+#Content {
+	background:white;
+	margin:10px 0px 0px 0px;
+	padding:16px 16px 48px 16px;
+}
+#rightcol {
+	float: right; /* since this element is floated, a width must be given */
+	width: 350px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #ffffff; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 10px;
+	margin:0px;
+}
+#rightcol h3 {
+	color:#012861;
+	font-weight:bold;
+}
+#rightcol a, #rightcol a:link, #rightcol a:visited { /*linked events in blue box*/
+	font-weight:bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000;
+}
+#rightcol a:hover, #rightcol a:active {
+	text-decoration:underline;
+}
+#bluebox {
+	width: 300px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
+	background: #b5d0e8; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding:5px 10px 5px 10px;/*T, R, B, L*/
+}
+#bluebox p { /*teaser*/
+	font-size: 10px;
+	line-height:12px;
+}
+#slide {
+	margin:25px 0px 25px 0px;/*T, R, B, L*/
+	width:320px;
+}
+#inthenews ul {
+	margin:0px 0px 0px -25px;/*T, R, B, L*/
+}
+#inthenews a, #inthenews a:link, #inthenews a:visited { /*linked events in blue box*/
+	font-weight:bold;
+	font-size: 10px;
+	text-decoration: none;
+	color: #000;
+}
+#inthenews a:hover, #inthenews a:active {
+	text-decoration:underline;
+}
+#featured {
+	margin:25px 0px 25px 0px;/*T, R, B, L*/
+	width:320px;
+}
+#featureditem {
+	margin:10px 0px 10px 0px;/*T, R, B, L*/
+}
+#featimag {
+	width: 65px;
+	margin: 0 250px 0 -2px; /*Margin must be in relation to the articletxt width*/
+}
+#feattxt {/*Contains header, teaser, byline*/
+	float: right;
+	width: 245px;
+	margin-top:-65px;
+}
+#featlead, #featlead a { /*Headline*/
+	font-weight:bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000;
+}
+#featlead a:hover, #featlead a:active {
+	text-decoration:underline;
+}
+#leftcol {
+	margin: 0 400px 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+#leftcol p {
+	font-size: 10px;
+}
+#leftcol h1 {
+	color:#012861;
+	font-weight:normal;
+}
+#ticheader a { /*category section text*/
+	color: #FFF;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight:normal;
+}
+#ticheader a:hover, #ticheader a:active {
+	text-decoration:underline;
+}
+/* ---------------------  general  ---------------------- */
+
+
+#outer {
+	position: relative;
+	width: 988px;
+	overflow: visible;
+	padding: 0;
+	margin: 0 auto;
+	border-width: 0 1px;
+	border-style: solid;
+}
+p {
+	padding: 0;
+	margin: 0 0 7px 0;
+}
+a img {
+	margin: 0 2px;
+	border: 0;
+}
+h1 {
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	font-size: 1.5em;
+	margin: 7px 0;
+}
+h2 {
+	font-size: 1.3em;
+	margin: 5px 0;
+}
+h3 {
+	font-size: 1.2em;
+	margin: 3px 0;
+}
+h4 {
+	font-size: 1.1em;
+	margin: 2px 0;
+}
+/* --------------------- */
+/*----------------------------*/
+/*Home article content*/
+
+
+#articleblock {/*Block containing one element- photo, header, teaser, byline*/
+	background:white;
+	margin:10px 0px 0px 0px;
+}
+#articlepic {
+	width: 120px;
+	margin: 0 270px 0 -2px; /*Margin must be in relation to the articletxt width*/
+}
+#articletxt {/*Contains header, teaser, byline*/
+	float: right;
+	width: 370px;
+	margin-top:-120px;
+	border-bottom:1px solid #bfbfbf;
+}
+#articletxt a { /*category section text*/
+	color: #FFF;
+	font-size: 18px;
+	text-decoration: none;
+}
+#articletxt a:hover, #articletxt a:active {
+	text-decoration:underline;
+}
+#articlesec_arts {/*Colored block header with category ARTS*/
+	background: #f65044;
+	width: 360px;
+	padding:6px;
+}
+#articlesec_sci {/*Colored block header with category SCIENCE*/
+	background: #7da141;
+	width: 360px;
+	padding:6px;
+}
+#articlesec_hist {/*Colored block header with category HISTORY*/
+	background: #012861;
+	width: 360px;
+	padding:6px;
+}
+#articlesec_nat {/*Colored block header with category NATURE*/
+	background: #7092f7;
+	width: 360px;
+	padding:6px;
+}
+#articlesec_mus {/*Colored block header with category MUSIC*/
+	background: #983699;
+	width: 360px;
+	padding:6px;
+}
+#articlelead, #articlelead a { /*Headline*/
+	font-weight:bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000;
+	margin:5px 0px 5px 0px;/*T, R, B, L*/
+}
+#leadcontainer { /*header, teaser, byline*/
+	margin:10px 0px 0px 0px;
+}
+#leadbody { /*teaser*/
+	font-size: 10px;
+	line-height:12px;
+}
+#leadbyline { /*byline*/
+	font-size: 9px;
+	font: bold;
+	margin:5px 0px 5px 0px;/*T, R, B, L*/
+}
+#ticpic {
+	width:100px;
+}
+
+#ticheader {/*Colored block header with category ARTS*/
+margin:-48px 0px 0px 115px;/*T, R, B, L*/
+	width:200px;
+	background: #f7941e;
+	
+	padding:6px;
+	margin-bottom:10px;
+}
+#ticheader a, #ticheader a:link, #ticheader a:visited { /*linked events in blue box*/
+	font-weight:normal;
+	font-size: 16px;
+	text-decoration: none;
+	color: #fff;
+}
+#ticheader a:hover, #ticheader a:active {
+	text-decoration:underline;
+}
+#ticlist{
+	margin-top:30px;
+	border-bottom:1px solid #bfbfbf;
+	width:310px;
+}
+#ticlist p{
+	font-size:10px;
+}
+/*----------------------------*/
+/*Ibox-footer*/
+#ibox {
+	z-index:1000000;
+	text-align:left;
+}
+#ibox_overlay {
+	z-index:1000000;
+}
+#ibox_loading {
+	position:absolute;
+	z-index:1000001;
+}
+#ibox_wrapper {
+	margin:30px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1000001;
+}
+#ibox_content {
+	z-index:1000002;
+	margin:27px 5px 5px 5px;
+	padding:2px;
+}
+#ibox_content object {
+	display:block;
+}
+#ibox_content .ibox_image {
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	border:0;
+	display:block;
+}
+#ibox_footer_wrapper a {
+	float:right;
+	display:block;
+	outline:0;
+	margin:0;
+	padding:0;
+}
+#ibox_footer_wrapper {
+	text-align:left;
+	position:absolute;
+	top:5px;
+	right:5px;
+	left:5px;
+	white-space:nowrap;
+	overflow:hidden;
+}
+</style> <style type="text/css"> #ibox_footer_wrapper {
+ font-weight:bold;
+ height:20px;
+ line-height:20px;
+}
+#ibox_footer_wrapper a {
+	text-decoration:none;
+	background:#888;
+	border:1px solid #666;
+	line-height:16px;
+	padding:0 5px;
+	color:#333;
+	font-weight:bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+#ibox_footer_wrapper a:hover {
+	background-color:#bbb;
+	color:#111;
+}
+#ibox_footer_wrapper {
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#111;
+}
+#ibox_wrapper {
+	border:1px solid #ccc;
+}
+#ibox_wrapper {
+	background-color:#999;
+}
+#ibox_content {
+	background-color:#eee;
+	border:1px solid #666;
+}
+#ibox_loading {
+	padding:50px;
+	background:#000;
+	color:#fff;
+	font-size:16px;
+	font-weight:bold;
+}
+/*----------------------------*/
+/*Top Menu*/
+div.mega {
+	display: none;
+}
+div.mega.hover {
+	display: block;
+}
+div.ddm {
+	z-index: 10;
+}
+div.ddm ul.dm {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	position: static;
+}
+div.ddm.hover ul.dm {
+	display: block;
+}
+div.mega.hover {
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+div.mega ul.dm {
+	padding: 0px 3px 0px 3px;
+	border-width: 0 0 0 0;
+	border-style: none;
+}
+div.mega ul.dm li.first {
+	border-top-width: 0px;
+	border-top-style: none;
+}
+/*----------------------------*/
+
+/* ---------------------  branding  --------------------- */
+.branding {
+	position: relative;
+	width: 988px;
+	vertical-align: middle;
+}
+.branding a:link, .branding a:visited {
+	text-decoration: none;
+}
+.branding a:hover, .branding a:active {
+	text-decoration: underline;
+}
+.branding h1 {
+	vertical-align: middle;
+	padding: 20px 0 0 400px;
+	margin: 0;
+}
+h1.hidden {
+	position: absolute;
+	top: -999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.brandinglogos {
+	position: relative;
+	float: left;
+	margin: 0 25px 0 10px;
+}
+.brandinglogos img {
+	vertical-align: middle;
+	margin: 0;
+}
+#SiteHomeLogo {
+	position: absolute;
+	left: 14px;
+	top: 25px;
+}
+/* --------------------- */
+
+/* ---------------------  top menu  --------------------- */
+#top-menu {
+	z-index: 100000;
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+}
+#top-menu-inner {
+	padding: 0;
+	margin: 0;
+}
+#top-menu table {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+#top-menu td {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border-width: 0 0 0 1px;
+	border-style: solid;
+}
+#top-menu td.first {
+	border-width: 0;
+}
+#top-menu table a {
+	display: block;
+	text-decoration: none;
+	padding: 7px 14px;
+	margin: 0;
+}
+.ie5 #top-menu table a, .ie6 #top-menu table a, .ie7 #top-menu table a, .ie8 #top-menu table a {
+	font-size: 1em;
+	padding: 8px 12px;
+}
+/* ---------------------  top menu search  -------------- */
+#divTopMenuSearch {
+	float: right;
+	padding: 4px 3px 0 0;
+}
+#textTopMenuSearch {
+	width: 90px;
+	font-size: .75em;
+	color: #808080;
+}
+.ie6 #textTopMenuSearch, .ie7 #textTopMenuSearch, .ie8 #textTopMenuSearch {
+	width: 100px;
+	font-size: .75em;
+	color: #808080;
+}
+#btnTopMenuSearch {
+	margin: 0 0 -4px 0;
+	border: 0;
+}
+/* ---------------------  drop menus  ------------------- */
+ul.dm {
+	display: none;
+	position: absolute;
+	z-index: 10000;
+	text-align: left;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: .92em;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.ie7 ul.dm, .ie6 ul.dm {
+	width: 240px;
+}
+div.ddm {
+	display: none;
+	border-width: 0;
+	border-style: none;
+}
+div.ddm.hover {
+	display: block;
+}
+div.mega ul.dm {
+	width: 180px;
+}
+ul.dm li h3 {
+	padding: 5px 5px 5px 6px;
+	margin: 0;
+}
+ul.dm li {
+	display: list-item;
+	padding: 0;
+	margin: 0;
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+ul.dm li a {
+	display: block;
+	height: 1%;
+	text-align: left;
+	text-decoration: none;
+	padding: 5px 10px 5px 4px;
+	margin: 0;
+}
+/* ---------------------  layout  ----------------------- */
+#main {
+	position: relative;
+	width: 988px;
+	background-image: url('http://drexel.edu/utilities/backgroundgenerator/bgimage.aspx?widths=165|608|215&colors=edece4|ffffff|edece4&fills=solid|solid|solid');
+	background-repeat: repeat-y;
+}
+#content {
+	display: inline;
+	float: left;
+	width: 823px;
+	height: auto !important;
+	height: 400px;
+	min-height: 400px;
+	padding: 0;
+	margin: 0 0 0 165px;
+}
+#contentwide {
+	display: inline;
+	float: left;
+	width: 988px;
+	height: auto !important;
+	height: 400px;
+	min-height: 400px;
+	padding: 0;
+	margin: 0;
+}
