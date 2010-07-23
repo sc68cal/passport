@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404
 from passport.models import Venue, Event,Ticket
 
 def venue_detail(request, object_id):
-	# Look up the Author (and raise a 404 if she's not found)
 	venue = get_object_or_404(Venue, pk=object_id)
 
 	# Show the detail page
@@ -17,7 +16,6 @@ def venue_detail(request, object_id):
 	)
 
 def event_detail(request, object_id):
-	# Look up the Author (and raise a 404 if she's not found)
 	event = get_object_or_404(Event, pk=object_id)
 
 	# Show the detail page
