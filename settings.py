@@ -156,12 +156,10 @@ def language_mapping(lang):
 
 PAGE_LANGUAGE_MAPPING = language_mapping
 
-PAGE_DEFAULT_TEMPLATE = 'pages/examples/index.html'
+PAGE_DEFAULT_TEMPLATE = 'pages/passport/base.html'
 
 PAGE_TEMPLATES = (
-    ('pages/examples/nice.html', 'nice one'),
-    ('pages/examples/cool.html', 'cool one'),
-    ('pages/examples/editor.html', 'raw editor'),
+    ('pages/passport/base.html','Drexel Passport Main'),
 )
 
 PAGE_SANITIZE_USER_INPUT = True
