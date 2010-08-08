@@ -22,6 +22,10 @@ class Venue(models.Model):
 
 	def apiaddr(self):
 		return self.address.replace(" ","+") + "+" + self.city.replace(" ","+") + "+" + self.state + "+" + self.zip
+	
+	@models.permalink
+	def get_absolute_url(self):
+			return ('passport.views.venue_detail', [str(self.id)])
 
 class Event(models.Model):
 	venue = models.ForeignKey(Venue)
@@ -31,6 +35,10 @@ class Event(models.Model):
 
 	def __unicode__(self):
 		return self.name + " on " + str(self.date) + " at " + str(self.venue)
+	
+	@models.permalink
+	def get_absolute_url(self):
+			return ('passport.views.event_detail', [str(self.id)])
 
 class UserProfile(models.Model):
 	#http://blog.howiworkdaily.com/post/2008/jun/17/django-tutorial-abstract-base-classes-vs-model-inh/

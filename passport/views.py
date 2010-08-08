@@ -1,7 +1,13 @@
 # Create your views here.
+from django.http import HttpResponse
+import json
 from django.views.generic import list_detail
 from django.shortcuts import get_object_or_404, render_to_response
 from passport.models import Venue, Event,Ticket
+from datetime import datetime
+
+def venue_list(request):
+	return list_detail.object_list(request, Venue.objects.all())
 
 def venue_detail(request, object_id):
 	venue = get_object_or_404(Venue, pk=object_id)
@@ -40,3 +46,18 @@ def reserve_ticket(request, event_id):
 
 def event_calendar(request):
 	return render_to_response('passport/calendar.html')
+
+def calendar_json(request):
+	if request.GET:
+		data = []
+		start_date = datetime.fromtimestamp(float(request.GET.get('start')))
+		end_date = datetime.fromtimestamp(float(request.GET.get('end')))
+		events = Event.objects.filter(date__gte=start_date).filter(date__lte=end_date)
+		
+		for event in events:
+			data.append({"id":event.id,"title":event.name,"start":str(event.date),"url":event.get_absolute_url()})
+		
+		return HttpResponse(json.dumps(data))
+	else:
+		return HttpResponse("A start date and end date is required in your request.")
+	

@@ -18,10 +18,11 @@
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month'
+				right: 'basicWeek,month'
 			},
 			editable: false,
-			events: "/passport/json-events/"
+			events: "{% url passport.views.calendar_json %}",
+			defaultView: "month"
 		});
 		
 	});
