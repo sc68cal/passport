@@ -1,11 +1,11 @@
-{% extends "passport/base.html"} 
+{% extends "passport/base.html" %} 
 {% load cache pages_tags %}
 {% load_pages %}
 {%block leftcolsub %}
 <div id="subarticletxt">
 <div id="subarticlesec_arts"><a href="#"> Arts</a></div>
 </div>
-<h2>Title of Article</h2>
+<h2>{% show_content current_page "title" %}</h2>
 <div id="subhead">Subhead</div>
 <div id="byline">Byline</div>
 <div id="photoblock"><img src="media/article_temp.jpg" border="0"
