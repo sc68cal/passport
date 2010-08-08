@@ -118,10 +118,10 @@ INSTALLED_APPS = (
 PAGE_CONNECTED_MODELS = [{
     'model':'passportcms.models.Article',
     'form':'passportcms.models.ArticleForm',
-#    'options':{
-#            'extra': 3,
-#            'max_num': 10,
-#        },
+    'options':{
+            'extra': 1,
+            'max_num': 1,
+        },
 },]
 
 # Default language code for this installation. All choices can be found here:
@@ -157,10 +157,11 @@ def language_mapping(lang):
 
 PAGE_LANGUAGE_MAPPING = language_mapping
 
-PAGE_DEFAULT_TEMPLATE = 'pages/passport/base.html'
+PAGE_DEFAULT_TEMPLATE = 'pages/passport/article.html'
 
 PAGE_TEMPLATES = (
     ('pages/passport/base.html','Drexel Passport Main'),
+    ('pages/passport/article.html','Drexel Passport Article')
 )
 
 PAGE_SANITIZE_USER_INPUT = True

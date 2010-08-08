@@ -1,0 +1,22 @@
+{% extends "passport/base.html"} 
+{% load cache pages_tags %}
+{% load_pages %}
+{%block leftcolsub %}
+<div id="subarticletxt">
+<div id="subarticlesec_arts"><a href="#"> Arts</a></div>
+</div>
+<h2>Title of Article</h2>
+<div id="subhead">Subhead</div>
+<div id="byline">Byline</div>
+<div id="photoblock"><img src="media/article_temp.jpg" border="0"
+	width="220" height="220" />
+<div id="locationblock">World Music Festival<br />
+<a href="#">Please Touch Museum</a><br />
+July 21-August 2</div>
+</div>
+{% placeholder body with CKEditor %}
+<div id="bottombyline">
+<p>Author Name is a senior at Drexel University, majoring in
+Communications.</p>
+</div>
+{% endblock %}
