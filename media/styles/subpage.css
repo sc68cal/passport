@@ -7,7 +7,7 @@
 	float: right; /* since this element is floated, a width must be given */
 	width: 230px; /* the actual width of this div, in standards-compliant browsers, or standards mode in Internet Explorer will include the padding and border in addition to the width */
 	background: #ffffff; /* the background color will be displayed for the length of the content in the column, but no further */
-	padding: 15px 10px;
+	padding: 0px 10px;
 	margin:0px;
 	border-left:1px solid #bfbfbf;
 }
@@ -57,13 +57,12 @@ padding: 0 20px;
 
 	width:200px;
 	background: #f7941e;
-	
-	padding:6px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
 	margin-bottom:10px;
 }
 #subticheader a, #subticheader a:link, #subticheader a:visited { /*linked events in blue box*/
 	font-weight:normal;
-	font-size: 16px;
+	font-size: 18px;
 	text-decoration: none;
 	color: #fff;
 }
@@ -79,7 +78,7 @@ padding: 0 20px;
 	font-size:10px;
 }
 #venuepic {
-	margin:0px 20px 15px 0px;/*T, R, B, L*/
+	margin:0px 20px 5px 0px;/*T, R, B, L*/
 	float:left;
 }
 #related ul{
@@ -94,4 +93,70 @@ padding: 0 20px;
 }
 #related a:hover, #related a:active {
 	text-decoration:underline;
+}
+
+/*articles*/
+#subarticletxt {/*Contains header, teaser, byline*/
+margin-bottom:10px;
+}
+#subarticletxt a { /*category section text*/
+	color: #FFF;
+	font-size: 18px;
+	text-decoration: none;
+}
+#subarticletxt a:hover, #subarticletxt a:active {
+	text-decoration:underline;
+}
+
+#subhead {
+	font-style:italic;
+}
+#byline {
+	font-size: 10px;
+	font-weight:bold;
+	margin:5px 0px 5px 0px;/*T, R, B, L*/
+}
+#locationblock{
+	margin-top:10px;
+	border:1px solid #bfbfbf;
+	font-weight:bold;
+	padding:5px;
+}
+#bottombyline{
+	margin-top:15px;
+	padding:5px;
+	font-style:italic;
+	font-size: 11px;
+	border-top:1px solid #bfbfbf;
+	border-bottom:1px solid #bfbfbf;
+}
+#photoblock {
+	float:left;
+	margin-right:10px;
+}
+/*section headers*/
+#subarticlesec_arts {/*Colored block header with category ARTS*/
+	background: #f65044;
+	width: 665px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
+}
+#subarticlesec_sci {/*Colored block header with category SCIENCE*/
+	background: #7da141;
+	width: 375px;
+padding:2px 2px 2px 8px;/*T, R, B, L*/
+}
+#subarticlesec_hist {/*Colored block header with category HISTORY*/
+	background: #012861;
+	width: 375px;
+padding:2px 2px 2px 8px;/*T, R, B, L*/
+}
+#subarticlesec_nat {/*Colored block header with category NATURE*/
+	background: #7092f7;
+	width: 375px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
+}
+#subarticlesec_mus {/*Colored block header with category MUSIC*/
+	background: #983699;
+	width: 375px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }

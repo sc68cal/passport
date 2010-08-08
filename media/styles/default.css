@@ -108,7 +108,7 @@ body {
 }
 #leftcol {
 	margin: 0 400px 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
-	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	padding: 0 20px;  /* remember that padding is the space inside the div box and margin is the space outside the div box */
 }
 #leftcol p {
 	font-size: 10px;
@@ -179,7 +179,7 @@ h4 {
 }
 #articletxt {/*Contains header, teaser, byline*/
 	float: right;
-	width: 370px;
+	width: 385px;
 	margin-top:-120px;
 	border-bottom:1px solid #bfbfbf;
 }
@@ -193,28 +193,28 @@ h4 {
 }
 #articlesec_arts {/*Colored block header with category ARTS*/
 	background: #f65044;
-	width: 360px;
-	padding:6px;
+	width: 375px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
 #articlesec_sci {/*Colored block header with category SCIENCE*/
 	background: #7da141;
-	width: 360px;
-	padding:6px;
+	width: 375px;
+padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
 #articlesec_hist {/*Colored block header with category HISTORY*/
 	background: #012861;
-	width: 360px;
-	padding:6px;
+	width: 375px;
+padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
 #articlesec_nat {/*Colored block header with category NATURE*/
 	background: #7092f7;
-	width: 360px;
-	padding:6px;
+	width: 375px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
 #articlesec_mus {/*Colored block header with category MUSIC*/
 	background: #983699;
-	width: 360px;
-	padding:6px;
+	width: 375px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
 #articlelead, #articlelead a { /*Headline*/
 	font-weight:bold;
@@ -232,24 +232,23 @@ h4 {
 }
 #leadbyline { /*byline*/
 	font-size: 9px;
-	font: bold;
+	font-weight:bold;
 	margin:5px 0px 5px 0px;/*T, R, B, L*/
 }
 #ticpic {
-	width:100px;
+	width:120px;
 }
 
 #ticheader {/*Colored block header with category ARTS*/
-margin:-48px 0px 0px 115px;/*T, R, B, L*/
-	width:200px;
+margin:-49px 0px 0px 135px;/*T, R, B, L*/
+	width:174px;
 	background: #f7941e;
-	
-	padding:6px;
+padding:2px 2px 2px 8px;/*T, R, B, L*/
 	margin-bottom:10px;
 }
 #ticheader a, #ticheader a:link, #ticheader a:visited { /*linked events in blue box*/
 	font-weight:normal;
-	font-size: 16px;
+	font-size: 18px;
 	text-decoration: none;
 	color: #fff;
 }
@@ -257,9 +256,9 @@ margin:-48px 0px 0px 115px;/*T, R, B, L*/
 	text-decoration:underline;
 }
 #ticlist{
-	margin-top:30px;
+	margin-top:40px;
 	border-bottom:1px solid #bfbfbf;
-	width:310px;
+	width:320px;
 }
 #ticlist p{
 	font-size:10px;
