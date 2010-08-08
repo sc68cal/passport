@@ -13,10 +13,12 @@ content="http://schemas.microsoft.com/intellisense/ie5">
 <link rel="stylesheet" type="text/css" href="/media/styles/default.css">
 <link rel="stylesheet" type="text/css" href="/media/styles/subpage.css">
 <link rel="Stylesheet" type="text/css" href="/media/styles/colors.css">
-<script type="text/javascript" language="javascript" src="media/styles/jquery-1.js"></script>
-<script type="text/javascript" language="javascript" src="media/styles/jquery_002.js"></script>
-<script type="text/javascript" language="javascript" src="media/styles/drexel.js"></script>
-<script type="text/javascript" src="media/styles/ibox.js"></script>
+<script type="text/javascript" language="javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="/media/js/jquery.hoverIntent.js"></script>
+<script type="text/javascript" language="javascript" src="/media/js/drexel.js"></script>
+<script type="text/javascript" src="/media/js/ibox.js"></script>
+{% block head%}
+{% endblock%}
 <!--[if lt IE 7]> 
         <style>
          img, div, a, input { behavior: url(/sc_scripts/iepngfix.htc) }
@@ -34,7 +36,7 @@ id="mainform">
   <div>
   </div>
   <script src="/media/styles/jquery.js" type="text/javascript"></script>
-  <script src="/media/styles/topmenu.js" type="text/javascript"></script>
+  <script src="/media/js/topmenu.js" type="text/javascript"></script>
   <script type="text/javascript">
 //<![CDATA[
 $j(document).ready(function() {InitTopMenu();});//]]>
@@ -72,7 +74,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
         <!-- -->
       </div>
     </div>
-    <script type="text/javascript" src="/media/styles/sliver.js"></script>
+    <script type="text/javascript" src="/media/js/sliver.js"></script>
     <!-- End: Drexel Sliver -->
     <!-- Start: Branding Bar Control -->
     <div  class="branding" style=" background-image:url(/media/images/logo_003.jpg);Height:153px;"><!--***placeholder; height is variable-->
@@ -103,40 +105,43 @@ href="index.html">Home</a></td>
     <!-- End: Top Menu -->
     <div id="Content">
  <!--right column-->
-	<div id="rightcolsub">
-		<div id="subticheader"> <a href="#">Sign Up for E-Tickets</a></div>
-		<!--this will Automatically generate the most recent events.-->
-		<div id="subticlist">
-		{%block eventlist%}
-			<a href="#">Sunday in the Park with George</a><br/>
-			<p>May 26, 8:00 p.m.</p>
-			<a href="venue.html">Il barbiere di Siviglia by Rossini</a><br/>
-			<p> May 6, 7:30 p.m.</p>
-			<a href="venue.html">Orphée &amp; Eurydice</a><br/>
-			<p> June 16, 2:30 p.m.</p>
-			<a href="venue.html">Program IV</a><br/>
-			<p> July 2, 7:30 p.m.</p>
-			<a href="venue.html"> "Breakfast at Tiffany’s (1961)" </a><br/>
-			<p> July 12, 8:00 p.m.</p>
-			<p><a href="venue.html">View the Calendar > </a></p>
-	 	{%endblock%}
-	{%block rightcolsub %}
-	{%endblock%}
-	 </div>
-	 <!-- end tix -->
-	 <p><br class="clearfloat" />
-
- <p><br class="clearfloat" />
-	</p>
-			<!--in the news-->
-		<div id="related"><h3>Related Content</h3>
-		<ul><li><a href="#">Drexel students visit the Mutter</a></li>
-		<li><a href="#">A new take on modern art</a></li>
-		<li><a href="#">Tips for day trips from Drexel U.</a></li>
-	 
-		</ul></div><!--end in the news-->
+ 	{% block wholerightcolsub %}
+		<div id="rightcolsub">
+			<div id="subticheader"> <a href="#">Sign Up for E-Tickets</a></div>
+			<!--this will Automatically generate the most recent events.-->
+			<div id="subticlist">
+			{%block eventlist%}
+				<a href="#">Sunday in the Park with George</a><br/>
+				<p>May 26, 8:00 p.m.</p>
+				<a href="venue.html">Il barbiere di Siviglia by Rossini</a><br/>
+				<p> May 6, 7:30 p.m.</p>
+				<a href="venue.html">Orphée &amp; Eurydice</a><br/>
+				<p> June 16, 2:30 p.m.</p>
+				<a href="venue.html">Program IV</a><br/>
+				<p> July 2, 7:30 p.m.</p>
+				<a href="venue.html"> "Breakfast at Tiffany’s (1961)" </a><br/>
+				<p> July 12, 8:00 p.m.</p>
+				<p><a href="venue.html">View the Calendar > </a></p>
+		 	{%endblock%}
+		{%block rightcolsub %}
+		{%endblock%}
+		 </div>
+		 <!-- end tix -->
+		 <p><br class="clearfloat" />
 	
-	</div>
+	 <p><br class="clearfloat" />
+		</p>
+				<!--in the news-->
+			<div id="related"><h3>Related Content</h3>
+			<ul><li><a href="#">Drexel students visit the Mutter</a></li>
+			<li><a href="#">A new take on modern art</a></li>
+			<li><a href="#">Tips for day trips from Drexel U.</a></li>
+		 
+			</ul></div><!--end in the news-->
+		
+		</div>
+	{% endblock %}
+
 	 <!--end right column-->
 	<div id="leftcolsub">
     {% block leftcolsub%}

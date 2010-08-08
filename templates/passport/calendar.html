@@ -1,0 +1,40 @@
+{% extends 'passport/base.html' %}
+
+{% block wholerightcolsub%}
+{% endblock%}
+{% block head%}
+<script type="text/javascript" src="/media/js/fullcalendar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/media/js/fullcalendar.css">
+<script type='text/javascript'>
+
+	$j(document).ready(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		$j('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month'
+			},
+			editable: false,
+			events: "/passport/json-events/"
+		});
+		
+	});
+
+</script>
+<style>
+#calendar{
+	width:900px;
+}
+</style>
+{% endblock %}
+{%block leftcolsub %}
+
+<div id="calendar" >
+</div>
+{% endblock %}

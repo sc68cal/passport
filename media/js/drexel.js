@@ -1,6 +1,7 @@
 /*
 Library meant for easy to use Javascript functions to add dynamic content to Sitecore Sites utilizing jQuery
 */
+var $j = jQuery.noConflict();
 
 var drexel = {
     HideShow: function(toggleID) {

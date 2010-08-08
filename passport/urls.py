@@ -13,5 +13,6 @@ urlpatterns = patterns('',
 	(r'^reserve/(?P<event_id>\d+)/$', reserve_ticket),
 	(r'^all/',list_detail.object_list,{"queryset": Venue.objects.all()}),
 	(r'^events/',list_detail.object_list,{"queryset": Event.objects.all()}),
+	(r"^calendar/",event_calendar),
 
 )

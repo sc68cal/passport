@@ -110,18 +110,19 @@ INSTALLED_APPS = (
     #'authority',
     # haystack change coverage score report by importing modules
     #'haystack',
-    'drexelpassport.passport',
+    'passport',
+    'passportcms',
 )
 
 
-#PAGE_CONNECTED_MODELS = [{
-#    'model':'pages.testproj.documents.models.Document',
-#    'form':'pages.testproj.documents.models.DocumentForm',
+PAGE_CONNECTED_MODELS = [{
+    'model':'passportcms.models.Article',
+    'form':'passportcms.models.ArticleForm',
 #    'options':{
 #            'extra': 3,
 #            'max_num': 10,
 #        },
-#},]
+},]
 
 # Default language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html

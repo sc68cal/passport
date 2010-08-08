@@ -1,6 +1,6 @@
 # Create your views here.
 from django.views.generic import list_detail
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render_to_response
 from passport.models import Venue, Event,Ticket
 
 def venue_detail(request, object_id):
@@ -14,8 +14,6 @@ def venue_detail(request, object_id):
 		extra_context={"title":"Drexel Passport: "+str(venue)}
 
 	)
-def foo():
-	pass
 def event_detail(request, object_id):
 	event = get_object_or_404(Event, pk=object_id)
 
@@ -40,3 +38,5 @@ def reserve_ticket(request, event_id):
 	else:
 		print "Tickets not available"
 
+def event_calendar(request):
+	return render_to_response('passport/calendar.html')
