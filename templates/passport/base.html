@@ -111,6 +111,9 @@ href="index.html">Home</a></td>
 			<!--this will Automatically generate the most recent events.-->
 			<div id="subticlist">
 			{%block eventlist%}
+				{% for event in passport.models.Event.objects.all %}
+					{{event}}
+				{% endfor %}
 				<a href="#">Sunday in the Park with George</a><br/>
 				<p>May 26, 8:00 p.m.</p>
 				<a href="venue.html">Il barbiere di Siviglia by Rossini</a><br/>
@@ -121,7 +124,7 @@ href="index.html">Home</a></td>
 				<p> July 2, 7:30 p.m.</p>
 				<a href="venue.html"> "Breakfast at Tiffany’s (1961)" </a><br/>
 				<p> July 12, 8:00 p.m.</p>
-				<p><a href="venue.html">View the Calendar > </a></p>
+				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}
 		{%block rightcolsub %}
 		{%endblock%}
