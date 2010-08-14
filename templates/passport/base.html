@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head
@@ -111,20 +110,14 @@ href="/">Home</a></td>
 			<div id="subticheader"> <a href="#">Sign Up for E-Tickets</a></div>
 			<!--this will Automatically generate the most recent events.-->
 			<div id="subticlist">
+			{% load passport_tags %}
 			{%block eventlist%}
-				{% for event in passport.models.Event.objects.all %}
-					{{event}}
+				{% latest_events %}
+				{% for obj in latest_events %}
+					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
+					<p>{{obj.date|date:"N j, Y, P"}}</p>
+					<p><a href="{% url passport.views.venue_detail obj.venue.id %} ">{{obj.venue}}</a>
 				{% endfor %}
-				<a href="#">Sunday in the Park with George</a><br/>
-				<p>May 26, 8:00 p.m.</p>
-				<a href="venue.html">Il barbiere di Siviglia by Rossini</a><br/>
-				<p> May 6, 7:30 p.m.</p>
-				<a href="venue.html">Orphée &amp; Eurydice</a><br/>
-				<p> June 16, 2:30 p.m.</p>
-				<a href="venue.html">Program IV</a><br/>
-				<p> July 2, 7:30 p.m.</p>
-				<a href="venue.html"> "Breakfast at Tiffany’s (1961)" </a><br/>
-				<p> July 12, 8:00 p.m.</p>
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}
 		{%block rightcolsub %}
@@ -180,19 +173,11 @@ href="#">Performances and E-Tickets</a></li>
     </div>
     <div class="ddm m5">
       <ul class="dm">
-        <!--  <li class="first"><a href="#">Arts</a></li>
-        <li><a href="#">Science</a></li>
-        <li><a href="#">History</a></li>
-        <li><a href="#">Nature</a></li>
-        <li><a href="#">Music</a></li>
-        -->
         {% load cache pages_tags %}
 		{% load_pages %}
-<ul>
-{% for page in pages_navigation %}
-    {% pages_menu page %}
-{% endfor %}
-</ul>
+		{% for page in pages_navigation %}
+ 		   {% pages_menu page %}
+		{% endfor %}
       </ul>
     </div>
     <!-- End: Top Menu Drops Downs -->

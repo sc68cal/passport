@@ -1,5 +1,5 @@
 import authority
-
+import settings
 from django.conf.urls.defaults import url, include, patterns
 from django.conf.urls.defaults import handler404, handler500
 from django.contrib import admin
@@ -16,12 +16,12 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     # Trick for Django to support static files
     # (security hole: only for Dev environement! remove this on Prod!!!)
-    (r'', include('staticfiles.urls')),
     (r'^articles/', include('pages.urls')),
     
     # make tests fail if a backend is not present on the system
-    (r'^search/', include('haystack.urls')),
     (r'^$', include('passportcms.urls')),
 )
 
 
+if settings.DEBUG:
+    urlpatterns += patterns('',    (r'', include('staticfiles.urls')),)
