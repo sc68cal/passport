@@ -22,10 +22,8 @@
  {% endblock%}
  {% block rightcolsub%}
 	<h3>Directions</h3>
-	<div id="map_canvas"></div> 
-	<script type="text/javascript">
-		initialize();
-	</script>
+	 <a href="http://maps.google.com/maps?&q={{object.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{object.apiaddr}}&size=220x220&sensor=false
+"/></a>
 {%endblock%}
 {%block leftcolsub %}
 <h1>{{object.name}}</h1>
