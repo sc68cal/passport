@@ -48,6 +48,7 @@ def reserve_ticket(request, event_id):
 		print "Tickets not available"
 
 def event_calendar(request):
+	
 	return render_to_response('passport/calendar.html')
 
 def calendar_json(request):

@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head
@@ -179,11 +180,19 @@ href="#">Performances and E-Tickets</a></li>
     </div>
     <div class="ddm m5">
       <ul class="dm">
-        <li class="first"><a href="#">Arts</a></li>
+        <!--  <li class="first"><a href="#">Arts</a></li>
         <li><a href="#">Science</a></li>
         <li><a href="#">History</a></li>
         <li><a href="#">Nature</a></li>
         <li><a href="#">Music</a></li>
+        -->
+        {% load cache pages_tags %}
+		{% load_pages %}
+<ul>
+{% for page in pages_navigation %}
+    {% pages_menu page %}
+{% endfor %}
+</ul>
       </ul>
     </div>
     <!-- End: Top Menu Drops Downs -->

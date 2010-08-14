@@ -6,17 +6,16 @@
 <div id="subarticlesec_arts"><a href="#"> Arts</a></div>
 </div>
 <h2>{% show_content current_page "title" %}</h2>
-<div id="subhead">Subhead</div>
-<div id="byline">Byline</div>
-<div id="photoblock"><img src="media/article_temp.jpg" border="0"
+<div id="subhead">{% placeholder subheading with TextInput %}</div>
+<div id="byline">{% placeholder byline with TextInput %}</div>
+<div id="photoblock">{% imageplaceholder body-image as imgsrc %}<img src="{{ MEDIA_URL }}{{ imgsrc }}" border="0"
 	width="220" height="220" />
-<div id="locationblock">World Music Festival<br />
-<a href="#">Please Touch Museum</a><br />
-July 21-August 2</div>
+<div id="locationblock">{% placeholder event with TextInput %}
+<a href="{% placeholder url with TextInput %}">{% placeholder venue with TextInput %}</a><br />
+{% placeholder date with TextInput %}</div>
 </div>
 {% placeholder body with CKEditor %}
 <div id="bottombyline">
-<p>Author Name is a senior at Drexel University, majoring in
-Communications.</p>
+<p>{% placeholder bottombyline with TextInput %}</p>
 </div>
 {% endblock %}

@@ -17,13 +17,11 @@ urlpatterns = patterns('',
     # Trick for Django to support static files
     # (security hole: only for Dev environement! remove this on Prod!!!)
     (r'', include('staticfiles.urls')),
-
-
-    
-    (r'^', include('pages.urls')),
+    (r'^articles/', include('pages.urls')),
     
     # make tests fail if a backend is not present on the system
     (r'^search/', include('haystack.urls')),
+    (r'^$', include('passportcms.urls')),
 )
 
 

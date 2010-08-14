@@ -1,5 +1,5 @@
 from django.db import models
-import Image 
+import PIL
 from django.contrib.auth.models import User, UserManager
 
 class Venue(models.Model):
@@ -15,7 +15,7 @@ class Venue(models.Model):
 	phone = models.CharField(max_length=10)
 	cost = models.DecimalField(max_digits=5,decimal_places=2)
 	url = models.CharField(max_length=1024)
-	#pic = models.ImageField(upload_to="venues")
+	pic = models.ImageField(upload_to="venues")
 
 	def __unicode__(self):
 		return self.name

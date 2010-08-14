@@ -115,15 +115,6 @@ INSTALLED_APPS = (
 )
 
 
-PAGE_CONNECTED_MODELS = [{
-    'model':'passportcms.models.Article',
-    'form':'passportcms.models.ArticleForm',
-    'options':{
-            'extra': 1,
-            'max_num': 1,
-        },
-},]
-
 # Default language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
@@ -161,7 +152,8 @@ PAGE_DEFAULT_TEMPLATE = 'pages/passport/article.html'
 
 PAGE_TEMPLATES = (
     ('pages/passport/base.html','Drexel Passport Main'),
-    ('pages/passport/article.html','Drexel Passport Article')
+    ('pages/passport/article.html','Drexel Passport Article'),
+    ('pages/passport/category.html',"Category List Page"),
 )
 
 PAGE_SANITIZE_USER_INPUT = True

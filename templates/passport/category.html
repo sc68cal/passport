@@ -1,0 +1,10 @@
+{% extends "passport/base.html" %} 
+{% load cache pages_tags %}
+{% load_pages %}
+{%block leftcolsub %}
+<ul>
+<ul>
+    {% pages_sub_menu current_page %}
+</ul>
+</ul>
+{% endblock %}
