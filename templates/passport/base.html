@@ -116,7 +116,7 @@ href="/">Home</a></td>
 				{% for obj in latest_events %}
 					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
 					<p>{{obj.date|date:"N j, Y, P"}}</p>
-					<p><a href="{% url passport.views.venue_detail obj.venue.id %} ">{{obj.venue}}</a>
+					<p><a href="{% url passport.views.venue_detail obj.venue.id %} ">{{obj.venue}}</a></p>
 				{% endfor %}
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}

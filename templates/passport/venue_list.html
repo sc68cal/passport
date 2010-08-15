@@ -1,34 +1,46 @@
 {% extends 'passport/base.html' %}
+{%block head %}
+
+<style>
+.venue{
+		padding-bottom:20px;
+}
+
+
+</style>
+
+{% endblock %}
+
 {%block leftcolsub %}
 
 	{% for object in object_list %}
+	<div class="venue">
 		<h1>{{object.name}}</h1>
-	<div id="vencolright">
-		<h3>Hours of Operation</h3>
-		<p>Monday-Friday: {{object.weekday_hours}}<br/>
-		Saturday-Sunday: {{object.weekend_hours }}</p>
-		<h3>Cost</h3>
-		<p>${{object.cost}}</p></div>
+		<div id="vencolright">
+				<h3>Hours of Operation</h3>
+				<p>Monday-Friday: {{object.weekday_hours}}<br/>
+				Saturday-Sunday: {{object.weekend_hours }}</p>
+				<h3>Cost</h3>
+				<p>${{object.cost}}</p>
+		</div>
 		<div id="vencolleft">
-					<div id="venuepic">
+			<div id="venuepic">
 				<img src="{{ MEDIA_URL }}{{object.pic}}" border="0" width="220" height="220"/>
 			</div>
-		{{object.phone}}<br/>
-
-	<a href="{{object.url}}">{{object.url}}</a>
-	<h3>Location</h3>
-	<p>
-		{{object.address}}<br />
-		{{object.city}},{{object.state}},{{object.zip}}<br />
-	</p>
-
- <p><br class="clearfloat" />
-	</p> 
-	 <h3>About</h3>
-	<p>{{object.about_text}}</p>
-<h3>Student Perspectives</h3>
-	<p>{{object.student_perspectives_text}}</p>
-</div>
+			{{object.phone}}<br/>
+			<a href="{{object.url}}">{{object.url}}</a>
+			<h3>Location</h3>
+			<p>
+				{{object.address}}<br />
+				{{object.city}},{{object.state}},{{object.zip}}<br />
+			</p>
+	 		<p><br class="clearfloat" /></p> 
+		 	<h3>About</h3>
+			<p>{{object.about_text}}</p>
+			<h3>Student Perspectives</h3>
+			<p>{{object.student_perspectives_text}}</p>
+		</div>
+	</div>
 	{% endfor %}
 {% endblock %}
 

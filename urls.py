@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     (r'^articles/', include('pages.urls')),
     
     # make tests fail if a backend is not present on the system
-    (r'^$', include('passportcms.urls')),
+    (r'^$', 'passport.views.index_view'),
 )
 
 

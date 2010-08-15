@@ -16,7 +16,7 @@ def latest_events(parser,token):
 class LatestEventsNode(template.Node):
     def render(self,context):
         print 'fired'
-        context['latest_events'] = Event.objects.all()[:5]
+        context['latest_events'] = Event.objects.all().order_by('date')[:7]
         return ''
     
 latest_events = register.tag(latest_events)

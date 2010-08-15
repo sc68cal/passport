@@ -111,7 +111,6 @@ INSTALLED_APPS = (
     # haystack change coverage score report by importing modules
     #'haystack',
     'passport',
-    'passportcms',
 )
 
 
