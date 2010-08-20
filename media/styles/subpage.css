@@ -140,23 +140,29 @@ margin-bottom:10px;
 	width: 665px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#subarticlesec_sci {/*Colored block header with category SCIENCE*/
+#subarticlesec_science {/*Colored block header with category SCIENCE*/
 	background: #7da141;
-	width: 375px;
+	width: 665px;
 padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#subarticlesec_hist {/*Colored block header with category HISTORY*/
+#subarticlesec_history {/*Colored block header with category HISTORY*/
 	background: #012861;
-	width: 375px;
+	width: 665px;
 padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#subarticlesec_nat {/*Colored block header with category NATURE*/
+#subarticlesec_nature {/*Colored block header with category NATURE*/
 	background: #7092f7;
-	width: 375px;
+	width: 665px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#subarticlesec_mus {/*Colored block header with category MUSIC*/
+#subarticlesec_music {/*Colored block header with category MUSIC*/
 	background: #983699;
-	width: 375px;
+	width: 665px;
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
+}
+
+#eticket {/*Colored block header with category MUSIC*/
+	background: #f7941e;
+	width: 665px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }

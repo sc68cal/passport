@@ -14,12 +14,8 @@ urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),
     (r'^passport/', include('passport.urls')),
     (r'^admin/', include(admin.site.urls)),
-    # Trick for Django to support static files
-    # (security hole: only for Dev environement! remove this on Prod!!!)
-    (r'^articles/', include('pages.urls')),
-    
-    # make tests fail if a backend is not present on the system
-    (r'^$', 'passport.views.index_view'),
+    (r'^article/', include('pages.urls')),
+    (r'^$', include('passportsite.urls')),
 )
 
 

@@ -6,11 +6,13 @@ from django.shortcuts import get_object_or_404, render_to_response
 from passport.models import Venue, Event,Ticket
 from datetime import datetime
 
-def index_view(request):
-	return render_to_response('passport/base.html')
+
 
 def venue_list(request):
 	return list_detail.object_list(request, Venue.objects.all())
+
+def event_list(request):
+	return list_detail.object_list(request, Event.objects.all())
 
 def venue_detail(request, object_id):
 	venue = get_object_or_404(Venue, pk=object_id)

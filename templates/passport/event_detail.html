@@ -1,8 +1,61 @@
-{% extends 'passport/base.html' %}
+ {% extends "passport/base.html" %}
+ 
+ {% block head %}
+ <script type="text/javascript"
+    src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+<script type="text/javascript">
+	var map;
+  function initialize() {
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+  }
 
+</script>
+ 
+ {% endblock%}
+ {% block rightcolsub%}
+	<h3>Directions</h3>
+	 <a href="http://maps.google.com/maps?&q={{event.venue.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{event.venue.apiaddr}}&size=220x220&sensor=false
+"/></a>
+{%endblock%}
 {%block leftcolsub %}
+<h1>{{event.name}} at {{event.venue.name}}</h1>
+	<div id="vencolright">
+		<h3>Cost</h3>
+		<p>${{event.cost}} / ticket</p></div> 
+		<div id="vencolleft">
+					<div id="venuepic">
+				{% if event.pic %}
+					<img src="{{ MEDIA_URL}}{{event.pic}}" border="0" width="220" height="220"/>
+				{% else %}
+				<img src="{{ MEDIA_URL }}{{event.venue.pic}}" border="0" width="220" height="220"/>
+				{% endif %}
+			</div>
+		{{event.venue.phone}}<br/>
+	{% if event.url %}
+		<a href="{{event.url}}">{{event.url}}</a>
+	{% else %}
+		<a href="{{event.venue.url}}">{{event.venue.url}}</a>
+	{% endif %}
+	<h3>Location</h3>
+	<p>
+		{{event.venue.address}}<br />
+		{{event.venue.city}},{{event.venue.state}},{{event.venue.zip}}<br />
+	</p>
 
-<div id="eventinfo">
-	{{ event }}
+ <p><br class="clearfloat" />
+	</p> 
+	 <h3>About</h3>
+	<p>{{event.venue.about_text}}</p>
+<h3>Student Perspectives</h3>
+	<p>{{event.venue.student_perspectives_text}}</p>
 </div>
+	<!-- end #mainContent -->
 {% endblock %}

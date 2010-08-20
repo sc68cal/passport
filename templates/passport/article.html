@@ -3,7 +3,7 @@
 {% load_pages %}
 {%block leftcolsub %}
 <div id="subarticletxt">
-<div id="subarticlesec_arts"><a href="#"> Arts</a></div>
+<div id="subarticlesec_{{current_page.get_root.title|lower}}"><a href="#">{{current_page.get_root.title}}</a></div>
 </div>
 <h2>{% show_content current_page "title" %}</h2>
 <div id="subhead">{% placeholder subheading with TextInput %}</div>

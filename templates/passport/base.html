@@ -88,11 +88,9 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
             <table summary="Top menu">
               <tbody>
                 <tr>
-                  <td id="m1" class="first active"><a class="active" 
-href="/">Home</a></td>
-                  <td id="m2"
- class=""><a href="#">About</a></td>
-                  <td id="m3" class=""><a href="{% url passport.views.venue_list %}">Institutions</a></td>
+                  <td id="m1" class="first active"><a class="active" href="/">Home</a></td>
+                  <td id="m2" class=""><a href="#">About</a></td>
+                  <td id="m3" class=""><a href="#">Institutions</a></td>
                   <td id="m4" class=""><a href="{% url passport.views.event_calendar %}">Calendar</a></td>
                   <td id="m5" class=""><a href="#">Columns</a></td>
                 </tr>
@@ -129,12 +127,16 @@ href="/">Home</a></td>
 	 <p><br class="clearfloat" />
 		</p>
 				<!--in the news-->
-			<div id="related"><h3>Related Content</h3>
-			<ul><li><a href="#">Drexel students visit the Mutter</a></li>
-			<li><a href="#">A new take on modern art</a></li>
-			<li><a href="#">Tips for day trips from Drexel U.</a></li>
-		 
-			</ul></div><!--end in the news-->
+			<div id="related">
+				<h3>Related Content</h3>
+				<ul>
+					{% load passport_tags %}
+					{% latest_per_category %}
+					{% for article in latest_articles %}
+						<li><a href="{% url pages.views.details article %}">{{article.title}}</a></li>
+					{% endfor %}
+				</ul>
+			</div><!--end in the news-->
 		
 		</div>
 	{% endblock %}
@@ -165,9 +167,8 @@ alt="Drexel University" width="117" height="16"></a> <img src="/media/images/foo
     <!-- Start: Top Menu Drops Downs -->
     <div class="ddm m3">
       <ul class="dm">
-        <li class="first"><a 
-href="#">Performances and E-Tickets</a></li>
-        <li><a href="#">Museums and Visiting Centers</a></li>
+        <li class="first"><a href="{% url passport.views.event_list %}">Performances and E-Tickets</a></li>
+        <li><a href="{% url passport.views.venue_list %}">Museums and Visiting Centers</a></li>
         <li><a href="#">Institution Map</a></li>
       </ul>
     </div>
