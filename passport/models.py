@@ -35,6 +35,7 @@ class Event(models.Model):
 	cost = models.DecimalField(max_digits=5,decimal_places=2)
 	pic = models.ImageField(upload_to='Events',blank=True)
 	url = models.CharField(max_length=1024,blank=True)
+	summary = models.TextField()
 
 	def __unicode__(self):
 		return self.name + " on " + str(self.date) + " at " + str(self.venue)

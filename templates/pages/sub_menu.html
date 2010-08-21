@@ -6,7 +6,7 @@
 	</div>
     <div class="articletxt">
     	<div class="articlelead"><a href="{% show_absolute_url child %}">{{child.title}}</a></div>
-    	<div class="leadbyline">{% show_content child "byline" %}</div>
+    	<div class="leadbyline">By {{child.author.first_name}} {{child.author.last_name}}</div>
     	<span class="leadbody"">{% show_content child "subheading"%} </span>
     </div>
 </div>
