@@ -1,0 +1,13 @@
+{% load pages_tags %}
+{% for child in children %}
+<div class="articleblock">
+	<div class="articlepic">
+		<img height='120' width='120' src='/media/{% show_content child "body-image" %}'/>
+	</div>
+    <div class="articletxt">
+    	<div class="articlelead"><a href="{% show_absolute_url child %}">{{child.title}}</a></div>
+    	<div class="leadbyline">{% show_content child "byline" %}</div>
+    	<span class="leadbody"">{% show_content child "subheading"%} </span>
+    </div>
+</div>
+{% endfor %}

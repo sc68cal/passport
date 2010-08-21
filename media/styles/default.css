@@ -169,68 +169,69 @@ h4 {
 /*Home article content*/
 
 
-#articleblock {/*Block containing one element- photo, header, teaser, byline*/
+.articleblock {/*Block containing one element- photo, header, teaser, byline*/
 	background:white;
 	margin:10px 0px 0px 0px;
 }
-#articlepic {
+.articlepic {
 	width: 120px;
-	margin: 0 270px 0 -2px; /*Margin must be in relation to the articletxt width*/
+	height: 120px;
 }
-#articletxt {/*Contains header, teaser, byline*/
+.articletxt {/*Contains header, teaser, byline*/
 	float: right;
 	width: 385px;
 	margin-top:-120px;
+	margin-right:120px;
 	border-bottom:1px solid #bfbfbf;
 }
-#articletxt a { /*category section text*/
+.articletxt a { /*category section text*/
 	color: #FFF;
 	font-size: 18px;
 	text-decoration: none;
 }
-#articletxt a:hover, #articletxt a:active {
+.articletxt a:hover, #articletxt a:active {
 	text-decoration:underline;
 }
-#articlesec_arts {/*Colored block header with category ARTS*/
+.articlesec_arts {/*Colored block header with category ARTS*/
 	background: #f65044;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#articlesec_sci {/*Colored block header with category SCIENCE*/
+.articlesec_science {/*Colored block header with category SCIENCE*/
 	background: #7da141;
 	width: 375px;
 padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#articlesec_hist {/*Colored block header with category HISTORY*/
+.articlesec_history {/*Colored block header with category HISTORY*/
 	background: #012861;
 	width: 375px;
 padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#articlesec_nat {/*Colored block header with category NATURE*/
+.articlesec_nature {/*Colored block header with category NATURE*/
 	background: #7092f7;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#articlesec_mus {/*Colored block header with category MUSIC*/
+.articlesec_music {/*Colored block header with category MUSIC*/
 	background: #983699;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
 }
-#articlelead, #articlelead a { /*Headline*/
+.articlelead, .articlelead a { /*Headline*/
 	font-weight:bold;
 	font-size: 12px;
 	text-decoration: none;
 	color: #000;
 	margin:5px 0px 5px 0px;/*T, R, B, L*/
 }
-#leadcontainer { /*header, teaser, byline*/
+.leadcontainer { /*header, teaser, byline*/
 	margin:10px 0px 0px 0px;
 }
-#leadbody { /*teaser*/
+.leadbody { /*teaser*/
 	font-size: 10px;
 	line-height:12px;
 }
-#leadbyline { /*byline*/
+.leadbyline { /*byline*/
 	font-size: 9px;
 	font-weight:bold;
 	margin:5px 0px 5px 0px;/*T, R, B, L*/

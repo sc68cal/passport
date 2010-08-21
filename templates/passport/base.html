@@ -113,8 +113,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 				{% latest_events %}
 				{% for obj in latest_events %}
 					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
-					<p>{{obj.date|date:"N j, Y, P"}}</p>
-					<p><a href="{% url passport.views.venue_detail obj.venue.id %} ">{{obj.venue}}</a></p>
+					<p>{{obj.date|date:"N j, Y, P"}}, {{obj.venue}}</p>
 				{% endfor %}
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}

@@ -30,7 +30,7 @@ class LatestArticleNode(template.Node):
     def render(self,context):
         context['latest_articles'] = []
         for pg in Page.objects.all():
-            if not pg.is_child_node() and not pg.is_leaf_node():
+            if not pg.is_child_node() and pg.get_children():
                 context['latest_articles'].append(pg.get_date_ordered_children_for_frontend()[0])
         return ''
 
