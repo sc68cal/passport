@@ -1,0 +1,52 @@
+{% extends 'passport/base.html' %}
+
+{% block wholerightcolsub%}
+{% endblock%}
+{% block head%}
+<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+{% endblock %}
+{% block leftcolsub %}
+
+<script>
+$j(document).ready( function () {
+	var map;
+	var latlng = new google.maps.LatLng(39.953, -75.186);
+	var myOptions = {
+		zoom: 14,
+		center: latlng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	ajax(map);
+});
+
+
+function ajax(map){
+	var geocoder;
+	geocoder = new google.maps.Geocoder();
+	
+	$j.getJSON('/passport/api/map/json/',function(json_data){
+		$j.each(json_data, function(i,item){
+			geocoder.geocode({"address":item[0]},function(results,status){
+				if(status == google.maps.GeocoderStatus.OK){
+					var marker = new google.maps.Marker({
+						title: item[1],
+						map:map,
+						position:results[0].geometry.location
+					});
+				}else{
+					alert("Geocode Failed");
+				}
+			});
+		});
+	});
+}
+
+</script>
+
+
+	<div id='map_canvas' style="width: 900px; height: 400px; margin-left: auto;margin-right:auto;"></div>
+	
+{% endblock %}

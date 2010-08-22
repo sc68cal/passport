@@ -6,8 +6,6 @@ from django.shortcuts import get_object_or_404, render_to_response
 from passport.models import Venue, Event,Ticket
 from datetime import datetime
 
-
-
 def venue_list(request):
 	return list_detail.object_list(request, Venue.objects.all())
 
@@ -50,11 +48,13 @@ def reserve_ticket(request, event_id):
 		print "Tickets not available"
 
 def event_calendar(request):
-	
 	return render_to_response('passport/calendar.html')
 
+def map(request):
+	return render_to_response('passport/map.html')
+
 def calendar_json(request):
-	if request.GET:
+	if request.GET and request.is_ajax():
 		data = []
 		start_date = datetime.fromtimestamp(float(request.GET.get('start')))
 		end_date = datetime.fromtimestamp(float(request.GET.get('end')))
@@ -67,3 +67,8 @@ def calendar_json(request):
 	else:
 		return HttpResponse("A start date and end date is required in your request.")
 	
+def map_json(request):
+	data = []
+	for venue in Venue.objects.all():
+		data.append([venue.apiaddr(),venue.name])
+	return HttpResponse(json.dumps(data))
