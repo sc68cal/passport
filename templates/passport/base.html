@@ -1,3 +1,4 @@
+{% load cache %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head
@@ -108,6 +109,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 			<div id="subticheader"> <a href="#">Sign Up for E-Tickets</a></div>
 			<!--this will Automatically generate the most recent events.-->
 			<div id="subticlist">
+			{% cache 30*60 events %}
 			{% load passport_tags %}
 			{%block eventlist%}
 				{% latest_events %}
@@ -117,6 +119,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 				{% endfor %}
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}
+		 	{% endcache %}
 		{%block rightcolsub %}
 		{%endblock%}
 		 </div>
@@ -126,6 +129,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 	 <p><br class="clearfloat" />
 		</p>
 				<!--in the news-->
+			{% cache 60*60 newsblock %}
 			<div id="related">
 				<h3>Related Content</h3>
 				<ul>
@@ -136,6 +140,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 					{% endfor %}
 				</ul>
 			</div><!--end in the news-->
+			{% endcache %}
 		
 		</div>
 	{% endblock %}
@@ -173,11 +178,13 @@ alt="Drexel University" width="117" height="16"></a> <img src="/media/images/foo
     </div>
     <div class="ddm m5">
       <ul class="dm">
+      {% cache 60*60*12 navmenu %}
         {% load cache pages_tags %}
 		{% load_pages %}
 		{% for page in pages_navigation %}
  		   {% pages_menu page %}
 		{% endfor %}
+	  {% endcache %}
       </ul>
     </div>
     <!-- End: Top Menu Drops Downs -->
