@@ -28,10 +28,6 @@ def latest_per_category(parser,token):
 
 class LatestArticleNode(template.Node):
     def render(self,context):
-        context['latest_articles'] = []
-        for pg in Page.objects.all():
-            if not pg.is_child_node() and pg.get_children():
-                context['latest_articles'].append(pg.get_date_ordered_children_for_frontend()[0])
-        return ''
+        context['latest_articles'] = Page.objects.filter(template='pages/passport/article.html').order_by('publication_date')[:7]
 
 latest_per_category = register.tag(latest_per_category)
