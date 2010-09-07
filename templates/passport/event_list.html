@@ -9,7 +9,7 @@
     <div class="articletxt">
     	<div class="articlelead"><a href="{% url passport.views.event_detail event.id %}">{{event.name}} at {{event.venue}}</a></div>
     	<div class="leadbyline">{{event.date|date:"N j, Y, P"}}</div>
-    	<p>Cost: ${{event.cost}}</p>
+    	<p>Cost: {{event.cost}}</p>
     	<p>
     </div>
 </div>

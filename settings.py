@@ -153,7 +153,6 @@ PAGE_LANGUAGE_MAPPING = language_mapping
 PAGE_DEFAULT_TEMPLATE = 'pages/passport/article.html'
 
 PAGE_TEMPLATES = (
-    ('pages/passport/base.html','Drexel Passport Main'),
     ('pages/passport/article.html','Drexel Passport Article'),
     ('pages/passport/category.html',"Category List Page"),
 )

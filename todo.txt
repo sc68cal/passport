@@ -1,0 +1,17 @@
+
+
+
+* change the time to am/pm
+
+
+
+
+
+-- Done --
+* venue pages should only show tickets for that venue and articles would show tickets for any venues.
+* Add link to individual venue pages from venue_list
+* change the weekend hours to not be mandatory
+* make the cost field a regular text field
+* Sort venue list by alphabetic
+*  About and Perspectives boxes as multi-line WYSIWYG fields
+* modify the categories template to include a content field above the listing of articles, along with an optional photo field.

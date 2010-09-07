@@ -1,6 +1,8 @@
 {% extends "passport/base.html" %} 
 {% load cache pages_tags %}
 {% load_pages %}
+{% imageplaceholder category-image as imgsrc %}
+{% placeholder contnet with CKEditor %}
 {%block leftcolsub %}
     {% pages_sub_menu current_page %}
 {% endblock %}

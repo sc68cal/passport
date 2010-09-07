@@ -17,11 +17,19 @@ class EventAdmin(admin.ModelAdmin):
 					a.save()
 					count += 1
 		self.message_user(request, "%s tickets successfully created" % count)
+	class Media:
+		js = ('static/js/tiny_mce/tiny_mce.js',
+          'js/textarea.js',)
+
+class VenueAdmin(admin.ModelAdmin):
+	class Media:
+		js = ('static/js/tiny_mce/tiny_mce.js',
+          'js/textarea.js',)
+
+admin.site.register(Venue, VenueAdmin)
 
 
 
-
-admin.site.register(Venue)
 admin.site.register(Event,EventAdmin)
 admin.site.register(Ticket)
 admin.site.register(Reservation)

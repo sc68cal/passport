@@ -8,14 +8,14 @@ class Venue(models.Model):
 	city = models.CharField(max_length=255)
 	state = models.CharField(max_length=2)
 	zip = models.CharField(max_length=5)
-	about_text= models.CharField(max_length=1024)
-	student_perspectives_text = models.CharField(max_length=1024)
+	about_text= models.TextField()
+	student_perspectives_text = models.TextField()
 	weekday_hours = models.CharField(max_length=255)
 	weekend_hours = models.CharField(max_length=255,blank=True)
 	phone = models.CharField(max_length=10)
 	cost = models.CharField(max_length=255)
 	url = models.CharField(max_length=1024)
-	pic = models.ImageField(upload_to="venues")
+	pic = models.ImageField(upload_to="venues",blank=True)
 
 	def __unicode__(self):
 		return self.name
