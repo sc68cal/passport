@@ -20,7 +20,15 @@
 </script>
  
  {% endblock%}
- {% block rightcolsub%}
+{%block eventlist%}
+ 	<h4> Upcoming events at {{object.name}}</h4>
+ 	{% for event in object.event_set.all %}
+		<a href="{% url passport.views.event_detail event.id %}">{{event.name}}</a><br />
+		<p>{{event.date|date:"N j, Y, P"}}</p> 	
+	{% endfor %}
+ 
+{% endblock %}
+{% block rightcolsub%}
 	<h3>Directions</h3>
 	 <a href="http://maps.google.com/maps?&q={{object.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{object.apiaddr}}&size=220x220&sensor=false
 "/></a>

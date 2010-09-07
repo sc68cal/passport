@@ -11,9 +11,9 @@ class Venue(models.Model):
 	about_text= models.CharField(max_length=1024)
 	student_perspectives_text = models.CharField(max_length=1024)
 	weekday_hours = models.CharField(max_length=255)
-	weekend_hours = models.CharField(max_length=255)
+	weekend_hours = models.CharField(max_length=255,blank=True)
 	phone = models.CharField(max_length=10)
-	cost = models.DecimalField(max_digits=5,decimal_places=2)
+	cost = models.CharField(max_length=255)
 	url = models.CharField(max_length=1024)
 	pic = models.ImageField(upload_to="venues")
 

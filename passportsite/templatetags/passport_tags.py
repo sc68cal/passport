@@ -29,5 +29,6 @@ def latest_per_category(parser,token):
 class LatestArticleNode(template.Node):
     def render(self,context):
         context['latest_articles'] = Page.objects.filter(status=1).filter(template='pages/passport/article.html').order_by('publication_date')[:7]
+        return ''
 
 latest_per_category = register.tag(latest_per_category)

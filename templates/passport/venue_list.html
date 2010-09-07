@@ -15,7 +15,7 @@
 
 	{% for object in object_list %}
 	<div class="venue">
-		<h1>{{object.name}}</h1>
+		<h1><a href="{% url passport.views.venue_detail object.id %}">{{object.name}}</a></h1>
 		<div id="vencolright">
 				<h3>Hours of Operation</h3>
 				<p>Monday-Friday: {{object.weekday_hours}}<br/>
