@@ -49,17 +49,19 @@ def reserve_ticket(request, event_id):
 	# See if any tickets are available
 	#http://docs.djangoproject.com/en/dev/topics/db/queries/#spanning-multi-valued-relationships
 	results = Ticket.objects.filter(event=event.id).filter(reservation__user__isnull=True)
-	if request.method == 'POST' and results:
+	if request.method == 'POST' and results.count():
 		form = DrexelIDForm(request.POST)
 		if form.is_valid():
 			reservation = Reservation()
 			drexel_user = UserProfile.objects.filter(drexel_id__exact=form.cleaned_data['drexel_id'],
-													drexel_username__exact=form.cleaned_data['drexel_username'])[0]
+													drexel_username__exact=form.cleaned_data['drexel_username'])
+			if not drexel_user.count():
+				return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form,'msg': "Invalid Login"})
 			reservation.ticket = results[0]
-			reservation.user = drexel_user
+			reservation.user = drexel_user[0]
 			reservation.save()
 			return reservation_detail(request,reservation.id)
-	elif results:
+	elif results.count():
 		#print "Tickets available"
 		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	else:
