@@ -61,6 +61,8 @@ def reserve_ticket(request, event_id):
 			reservation.user = drexel_user[0]
 			reservation.save()
 			return reservation_detail(request,reservation.id)
+		else:
+			return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	elif results.count():
 		#print "Tickets available"
 		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
