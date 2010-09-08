@@ -47,6 +47,8 @@ class Event(models.Model):
 class UserProfile(models.Model):
 	#http://blog.howiworkdaily.com/post/2008/jun/17/django-tutorial-abstract-base-classes-vs-model-inh/
 	user =  models.ForeignKey(User,unique=True)
+	drexel_id = models.CharField(max_length=25)
+	drexel_username = models.CharField(max_length=255)
 
 	def __unicode__(self):
 		return str(self.user)

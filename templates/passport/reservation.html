@@ -1,0 +1,9 @@
+{% extends 'passport/base.html' %}
+
+{% block leftcolsub %}
+	In order to reserve a ticket for {{ticket.event}}, please enter a valid Drexel username and Drexel ID #.
+	<form name='reserve' action="{% url passport.views.reserve_ticket ticket.event.id %}" method="post">
+	{{form.as_p}}
+	<input type="submit" value="Reserve My Ticket"/>
+	</form>
+{% endblock %}

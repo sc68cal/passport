@@ -3,8 +3,9 @@ from django.http import HttpResponse
 import json
 from django.views.generic import list_detail
 from django.shortcuts import get_object_or_404, render_to_response
-from passport.models import Venue, Event,Ticket
+from passport.models import Venue, Event,Ticket,Reservation,UserProfile
 from datetime import datetime
+from passport.forms import DrexelIDForm
 
 def venue_list(request):
 	return list_detail.object_list(request, Venue.objects.all().order_by('name'))
@@ -35,17 +36,35 @@ def event_detail(request, object_id):
 		extra_context={"title":"Drexel Passport: "+str(event)}
 	)
 
+def reservation_detail(request,object_id):
+	return list_detail.object_detail(
+										request,
+										queryset = Reservation.objects.all(),
+										object_id = object_id,
+									)
 
 def reserve_ticket(request, event_id):
 	event = get_object_or_404(Event, pk=event_id)
-
+	form = DrexelIDForm()
 	# See if any tickets are available
 	#http://docs.djangoproject.com/en/dev/topics/db/queries/#spanning-multi-valued-relationships
 	results = Ticket.objects.filter(event=event.id).filter(reservation__user__isnull=True)
-	if results:
-		print "Tickets available"
+	if request.method == 'POST' and results:
+		form = DrexelIDForm(request.POST)
+		if form.is_valid():
+			reservation = Reservation()
+			drexel_user = UserProfile.objects.filter(drexel_id__exact=form.cleaned_data['drexel_id'],
+													drexel_username__exact=form.cleaned_data['drexel_username'])[0]
+			reservation.ticket = results[0]
+			reservation.user = drexel_user
+			reservation.save()
+			return reservation_detail(request,reservation.id)
+	elif results:
+		#print "Tickets available"
+		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	else:
 		print "Tickets not available"
+
 
 def event_calendar(request):
 	return render_to_response('passport/calendar.html')
