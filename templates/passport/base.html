@@ -119,27 +119,29 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 					<p>{{obj.date|date:"N j, Y, P"}}, {{obj.venue}}</p>
 				{% endfor %}
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
+					 </div>
+		 <!-- end tix -->
 		 	{%endblock%}
 		{%block rightcolsub %}
-{% block related %}
-	 <p><br class="clearfloat" />
-		</p>
-				<!--in the news-->
-			<div id="related">
-				<h3>Related Content</h3>
-				<ul>
-					{% load passport_tags %}
-					{% latest_per_category %}
-					{% for article in latest_articles %}
-						<li><a href="{% url pages.views.details article %}">{{article.title}}</a></li>
-					{% endfor %}
-				</ul>
-			</div><!--end in the news-->
-		
-{% endblock %}
+		<div id='slide'></div>
+		{% block related %}
+	 		<p><br class="clearfloat" />
+				</p>
+						<!--in the news-->
+					<div id="related">
+						<h3>Related Content</h3>
+						<ul>
+							{% load passport_tags %}
+							{% latest_per_category %}
+							{% for article in latest_articles %}
+								<li><a href="{% url pages.views.details article %}">{{article.title}}</a></li>
+							{% endfor %}
+						</ul>
+					</div><!--end in the news-->
+				
+		{% endblock %}
 		{%endblock%}
-		 </div>
-		 <!-- end tix -->
+
 		 <p><br class="clearfloat" />
 
 		</div>

@@ -19,8 +19,26 @@
     </div>
 </div>
 {% endfor %}
-{% endblock %}		
-{% block related %}
+{% endblock %}
+{% block wholerightcolsub %}
+<div id="rightcol">
+            
+        
+			<div id="ticpic"> <a href="#"><img width="125" height="69" border="0" src="media/images/tickets.png"></a></div>		
+          <div id="ticheader"> <a href="#">Sign Up for E-Tickets
+</a></div>
+          <!--this will Automatically generate the most recent events.-->
+     <div id="ticlist"> 
+     	{% latest_events %}
+				{% for obj in latest_events %}
+					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
+					<p>{{obj.date|date:"N j, Y, P"}}, {{obj.venue}}</p>
+				{% endfor %}
+				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
+   </div>
+  
+        <div id="slide"> <img width="320" height="200" border="0" src="media/slide.jpg"></div>
+        <!--in the news-->
 	 <p><br class="clearfloat" />
 		</p>
 				<!--in the news-->
@@ -33,5 +51,6 @@
 					{% endfor %}
 				</ul>
 			</div><!--end in the news-->
-		
+    
+      </div>
 {% endblock %}
