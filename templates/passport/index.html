@@ -25,8 +25,7 @@
             
         
 			<div id="ticpic"> <a href="#"><img width="125" height="69" border="0" src="media/images/tickets.png"></a></div>		
-          <div id="ticheader"> <a href="#">Sign Up for E-Tickets
-</a></div>
+			<div id="ticheader"> <a href="{% url passport.views.event_list %}">Sign Up for E-Tickets</a></div>
           <!--this will Automatically generate the most recent events.-->
      <div id="ticlist"> 
      	{% latest_events %}
