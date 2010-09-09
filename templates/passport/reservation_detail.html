@@ -1,0 +1,22 @@
+{% extends 'passport/base.html' %}
+
+{% block leftcolsub %}
+<div class='subarticletxt'>
+	<div id='eticket'>E-Ticket Confirmation</div>
+</div>
+<h2>{{object.ticket.event}}</h2>
+<p>
+{{object.ticket.event.date}}<br />
+{{object.ticket.event.venue.name}}<br />
+{{object.ticket.event.venue.phone}}<br />
+{{object.ticket.event.venue.url}}<br />
+{{object.ticket.event.venue.address}}<br />
+{{object.ticket.event.venue.city}}<br />
+{{object.ticket.event.venue.state}}<br />
+{{object.ticket.event.venue.zip}}<br />
+</p>
+{{object.user.firstname}}
+{{object.user.lastname}}
+
+<p>This is your e-Ticket (#{{object.id}}). Be sure to print it, and present it along with your Student ID, and your Cultural Passport when attending the performance.</p>
+{% endblock %}

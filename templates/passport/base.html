@@ -107,7 +107,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
  <!--right column-->
  	{% block wholerightcolsub %}
 		<div id="rightcolsub">
-			<div id="subticheader"> <a href="#">Sign Up for E-Tickets</a></div>
+			<div id="subticheader"> <a href="{% block e_ticket_url %}{% url passport.views.event_list %}{%endblock%}">Sign Up for E-Tickets</a></div>
 			<!--this will Automatically generate the most recent events.-->
 			<div id="subticlist">
 			{% load passport_tags %}

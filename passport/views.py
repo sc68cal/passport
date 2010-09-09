@@ -1,9 +1,10 @@
 # Create your views here.
 from django.http import HttpResponse
+from django.db import transaction
 import json
 from django.views.generic import list_detail
 from django.shortcuts import get_object_or_404, render_to_response
-from passport.models import Venue, Event,Ticket,Reservation,UserProfile
+from passport.models import Venue, Event,Ticket,Reservation,DrexelProfile
 from datetime import datetime
 from passport.forms import DrexelIDForm
 
@@ -42,7 +43,8 @@ def reservation_detail(request,object_id):
 										queryset = Reservation.objects.all(),
 										object_id = object_id,
 									)
-
+	
+@transaction.commit_on_success
 def reserve_ticket(request, event_id):
 	event = get_object_or_404(Event, pk=event_id)
 	form = DrexelIDForm()
@@ -53,7 +55,7 @@ def reserve_ticket(request, event_id):
 		form = DrexelIDForm(request.POST)
 		if form.is_valid():
 			reservation = Reservation()
-			drexel_user = UserProfile.objects.filter(drexel_id__exact=form.cleaned_data['drexel_id'],
+			drexel_user = DrexelProfile.objects.filter(drexel_id__exact=form.cleaned_data['drexel_id'],
 													drexel_username__exact=form.cleaned_data['drexel_username'])
 			if not drexel_user.count():
 				return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form,'msg': "Invalid Login"})
@@ -67,7 +69,7 @@ def reserve_ticket(request, event_id):
 		#print "Tickets available"
 		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	else:
-		print "Tickets not available"
+		return render_to_response('passport/tickets_unavailable.html')
 
 
 def event_calendar(request):

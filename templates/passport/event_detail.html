@@ -10,6 +10,8 @@
 {%endblock%} {%block leftcolsub %}
 <h1>{{event.name}} at {{event.venue.name}}</h1>
 <div id="vencolright">
+	<h3>Date</h3>
+	<p>{{event.date|date:"N j, Y, P"}}</p>
 	<h3>Cost</h3>
 	<p>{{event.cost}}</p>
 </div>
@@ -37,4 +39,7 @@
 	{{event.summary|safe}}
 </div>
 <!-- end #mainContent -->
+{% endblock %}
+{% block e_ticket_url %}
+{% url passport.views.reserve_ticket event.id %}
 {% endblock %}
