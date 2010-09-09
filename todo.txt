@@ -1,11 +1,11 @@
 -- TODO --
-* Reserve ticket functionality
 * Student database upload
-* Print ticket functionality
 * change the time to am/pm
-* create 'pending' flag for ticket to avoid TTCTTOU - investigate transaction or locking the table.
 
 -- Done --
+* Reserve ticket functionality
+* Print ticket functionality
+
 * venue pages should only show tickets for that venue and articles would show tickets for any venues.
 * Add link to individual venue pages from venue_list
 * change the weekend hours to not be mandatory
