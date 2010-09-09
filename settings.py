@@ -113,6 +113,7 @@ INSTALLED_APPS = (
     #'haystack',
     'passport',
     'passportsite',
+    'news'
 )
 
 
@@ -154,6 +155,7 @@ PAGE_DEFAULT_TEMPLATE = 'pages/passport/article.html'
 PAGE_TEMPLATES = (
     ('pages/passport/article.html','Drexel Passport Article'),
     ('pages/passport/category.html',"Category List Page"),
+    ('pages/passport/full_page.html', 'Site page')
 )
 
 PAGE_SANITIZE_USER_INPUT = True

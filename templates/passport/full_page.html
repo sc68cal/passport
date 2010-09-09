@@ -1,0 +1,8 @@
+
+{% extends 'passport/base.html' %}
+{% load cache pages_tags %}
+{% load_pages %}
+{%block leftcolsub %}
+<h2>{% show_content current_page "title" %}</h2>
+{% placeholder body with CKEditor %}
+{% endblock %}

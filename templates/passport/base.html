@@ -121,11 +121,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
 		 	{%endblock%}
 		{%block rightcolsub %}
-		{%endblock%}
-		 </div>
-		 <!-- end tix -->
-		 <p><br class="clearfloat" />
-	
+{% block related %}
 	 <p><br class="clearfloat" />
 		</p>
 				<!--in the news-->
@@ -140,6 +136,12 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 				</ul>
 			</div><!--end in the news-->
 		
+{% endblock %}
+		{%endblock%}
+		 </div>
+		 <!-- end tix -->
+		 <p><br class="clearfloat" />
+
 		</div>
 	{% endblock %}
 

@@ -6,7 +6,9 @@ from django.views.generic import list_detail
 from django.shortcuts import get_object_or_404, render_to_response
 from passport.models import Venue, Event,Ticket,Reservation,DrexelProfile
 from datetime import datetime
-from passport.forms import DrexelIDForm
+from passport.forms import DrexelIDForm,UploadForm
+from django.contrib.auth.decorators import login_required
+
 
 def venue_list(request):
 	return list_detail.object_list(request, Venue.objects.all().order_by('name'))
@@ -15,18 +17,16 @@ def event_list(request):
 	return list_detail.object_list(request, Event.objects.all().order_by('date'))
 
 def venue_detail(request, object_id):
-	venue = get_object_or_404(Venue, pk=object_id)
+	get_object_or_404(Venue, pk=object_id)
 
 	# Show the detail page
 	return list_detail.object_detail(
 		request,
 		queryset = Venue.objects.all(),
 		object_id = object_id,
-		extra_context={"title":"Drexel Passport: "+str(venue)}
-
 	)
 def event_detail(request, object_id):
-	event = get_object_or_404(Event, pk=object_id)
+	get_object_or_404(Event, pk=object_id)
 
 	# Show the detail page
 	return list_detail.object_detail(
@@ -34,7 +34,6 @@ def event_detail(request, object_id):
 		queryset = Event.objects.all(),
 		object_id = object_id,
 		template_object_name = "event",
-		extra_context={"title":"Drexel Passport: "+str(event)}
 	)
 
 def reservation_detail(request,object_id):
@@ -70,7 +69,18 @@ def reserve_ticket(request, event_id):
 		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	else:
 		return render_to_response('passport/tickets_unavailable.html')
-
+	
+@login_required
+def profile_upload(request):
+	form = UploadForm(request.POST,request.FILES)
+	
+	if request.method == "POST":
+		if form.is_valid():
+			print form
+		else:
+			print "Error!"
+		
+		
 
 def event_calendar(request):
 	return render_to_response('passport/calendar.html')

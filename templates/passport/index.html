@@ -1,8 +1,9 @@
 {% extends "passport/base.html" %}
 {% block leftcolsub %}
 {% load pages_tags %}
+{% load passport_tags %}
 
-
+<h1>Your guide to Philadelphia's cultural scene.</h1>
 {% for article in article_list %}
 <div class="articleblock">
 	<div class="articlesec_{{article.get_root.title|lower}}">
@@ -18,5 +19,19 @@
     </div>
 </div>
 {% endfor %}
-
+{% endblock %}		
+{% block related %}
+	 <p><br class="clearfloat" />
+		</p>
+				<!--in the news-->
+			<div id="related">
+				<h3>In The News</h3>
+				<ul>
+					{% news_links  %}
+					{% for news in news_links %}
+						<li><a href="{{news.url}}">{{news.title}}</a></li>
+					{% endfor %}
+				</ul>
+			</div><!--end in the news-->
+		
 {% endblock %}

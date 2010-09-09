@@ -534,6 +534,7 @@ ul.dm li a {
 	text-decoration: none;
 	padding: 5px 10px 5px 4px;
 	margin: 0;
+	min-width: 73px;
 }
 /* ---------------------  layout  ----------------------- */
 #main {

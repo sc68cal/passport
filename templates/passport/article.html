@@ -1,6 +1,9 @@
 {% extends "passport/base.html" %} 
 {% load cache pages_tags %}
+{% load passport_tags %}
 {% load_pages %}
+
+
 {%block leftcolsub %}
 <div id="subarticletxt">
 	<div id="subarticlesec_{{current_page.get_root.title|lower}}">
@@ -13,7 +16,7 @@
 <div id="photoblock">{% imageplaceholder body-image as imgsrc %}<img src="{{ MEDIA_URL }}{{ imgsrc }}" border="0"
 	width="220" height="220" />
 <div id="locationblock">
-	{% placeholder event with TextInput %}
+	{% placeholder event with TextInput %}<br />
 	<a href="{% placeholder url with TextInput %}">{% placeholder venue with TextInput %}</a><br />
 	{% placeholder date with TextInput %}</div>
 </div>

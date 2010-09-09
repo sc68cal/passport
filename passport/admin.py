@@ -1,7 +1,6 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-from django.db import models
 from django.contrib import admin
 from passport.models import *
 

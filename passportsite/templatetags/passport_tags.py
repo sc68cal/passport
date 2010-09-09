@@ -7,6 +7,7 @@ Created on Aug 8, 2010
 from django import template
 from passport.models import Event
 from pages.models import Page
+from news.models import NewsLink
 
 register = template.Library()
 
@@ -27,7 +28,17 @@ def latest_per_category(parser,token):
 
 class LatestArticleNode(template.Node):
     def render(self,context):
-        context['latest_articles'] = Page.objects.filter(status=1).filter(template='pages/passport/article.html').order_by('publication_date')[:7]
+        context['latest_articles'] = Page.objects.filter(status=1).filter(template='pages/passport/article.html').order_by('-publication_date')[:7]
         return ''
 
 latest_per_category = register.tag(latest_per_category)
+
+def news_links(parser,token):
+    return NewsLinkNode()
+
+class NewsLinkNode(template.Node):
+    def render(self,context):
+        context['news_links'] = NewsLink.objects.all()
+        return ''
+        
+news_links = register.tag(news_links)
