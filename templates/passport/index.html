@@ -1,13 +1,13 @@
 {% extends "passport/base.html" %}
-{% block leftcolsub %}
+{% block wholeleftcol %}
 {% load pages_tags %}
 {% load passport_tags %}
-
+<div id='leftcol'>
 <h1>Your guide to Philadelphia's cultural scene.</h1>
 {% for article in article_list %}
 <div class="articleblock">
 	<div class="articlesec_{{article.get_root.title|lower}}">
-			<a style="font-size:18px;text-decoration:underline;color:#FFF " href="{% show_absolute_url article.get_root %}">{{article.get_root.title}}</a>
+			<a style="font-size:18px;text-decoration:underline;color:#FFF " href="{% show_absolute_url article.get_root %}">{{article.get_root.title|safe}}</a>
 	</div>
 	<div class="articlepic">
 		<img height='120' width='120' src='/media/{% show_content article "homepage_image" %}'/>
@@ -19,6 +19,7 @@
     </div>
 </div>
 {% endfor %}
+</div>
 {% endblock %}
 {% block wholerightcolsub %}
 <div id="rightcol">

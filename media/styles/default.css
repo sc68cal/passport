@@ -181,8 +181,9 @@ h4 {
 	float: right;
 	width: 385px;
 	margin-top:-120px;
-	margin-right:120px;
 	border-bottom:1px solid #bfbfbf;
+	margin-left: -200px;
+	
 }
 .articletxt a { /*category section text*/
 	color: #FFF;
@@ -200,17 +201,20 @@ h4 {
 .articlesec_science {/*Colored block header with category SCIENCE*/
 	background: #7da141;
 	width: 375px;
-padding:2px 2px 2px 8px;/*T, R, B, L*/
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	
 }
 .articlesec_history {/*Colored block header with category HISTORY*/
 	background: #012861;
 	width: 375px;
-padding:2px 2px 2px 8px;/*T, R, B, L*/
+	padding:2px 2px 2px 8px;/*T, R, B, L*/
+
 }
 .articlesec_nature {/*Colored block header with category NATURE*/
 	background: #7092f7;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+
 }
 .articlesec_music {/*Colored block header with category MUSIC*/
 	background: #983699;
