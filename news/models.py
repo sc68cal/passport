@@ -5,3 +5,6 @@ from django.db import models
 class NewsLink(models.Model):
     title = models.CharField(max_length=255)
     url = models.CharField(max_length=255)
+    
+    def __unicode__(self):
+        return self.title
