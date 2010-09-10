@@ -197,29 +197,35 @@ h4 {
 	background: #f65044;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	margin-left: 120px;
 }
 .articlesec_science {/*Colored block header with category SCIENCE*/
 	background: #7da141;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	margin-left: 120px;
 	
 }
 .articlesec_history {/*Colored block header with category HISTORY*/
 	background: #012861;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	margin-left: 120px;
 
 }
 .articlesec_nature {/*Colored block header with category NATURE*/
 	background: #7092f7;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	margin-left: 120px;
 
 }
 .articlesec_music {/*Colored block header with category MUSIC*/
 	background: #983699;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
+	margin-left: 120px;
+
 }
 .articlelead, .articlelead a { /*Headline*/
 	font-weight:bold;
