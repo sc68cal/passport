@@ -14,8 +14,8 @@
 	</div>
     <div class="articletxt">
     	<div class="articlelead"><a href="{% show_absolute_url article %}">{{article.title}}</a></div>
-    	<div class="leadbyline">By {{article.author.first_name}} {{article.author.last_name}}</div>
     	<span class="leadbody"">{% show_content article "homepage_subheading"%} </span>
+    	<div class="leadbyline">By {{article.author.first_name}} {{article.author.last_name}}</div>
     </div>
 </div>
 {% endfor %}
