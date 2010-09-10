@@ -1,6 +1,5 @@
 from django.db import models
 import PIL
-from django.contrib.auth.models import User, UserManager
 
 class Venue(models.Model):
 	name = models.CharField(max_length=255)
@@ -52,13 +51,16 @@ class DrexelProfile(models.Model):
 	lastname = models.CharField(max_length=255)
 
 	def __unicode__(self):
-		return str(self.user)
+		return str(self.drexel_id)
 
 class Ticket(models.Model):
 	event = models.ForeignKey(Event)
 	def __unicode__(self):
-		return str(self.event)
+		return "Ticket #" + str(self.id) + " for " +  str(self.event) 
 
 class Reservation(models.Model):
 	ticket = models.ForeignKey(Ticket)
 	user = models.ForeignKey(DrexelProfile)
+	
+	def __unicode__(self):
+		return str(self.user) + " reservation for " + str(self.ticket)
