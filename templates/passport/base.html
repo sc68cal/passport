@@ -118,7 +118,7 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
 					<p>{{obj.date|date:"N j, Y, P"}}, {{obj.venue}}</p>
 				{% endfor %}
-				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
+				<p><a href="{% url passport.views.event_calendar %}">View the Calendar</a></p>
 					 </div>
 		 <!-- end tix -->
 		 	{%endblock%}
@@ -141,13 +141,14 @@ style="border-width: 0pt;" class="nudge hover"> </a> </div>
 				
 		{% endblock %}
 		{%endblock%}
-
-		 <p><br class="clearfloat" />
-
 		</div>
+
+		 <p><br class="clearfloat" /></p>
+
 	{% endblock %}
 
 	 <!--end right column-->
+	</div>
 	<div id="leftcolsub">
     {% block leftcolsub%}
 	{% endblock %}
