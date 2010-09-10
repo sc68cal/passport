@@ -2,7 +2,8 @@
 {% load cache pages_tags %}
 {% load passport_tags %}
 {% load_pages %}
-
+{% imageplaceholder homepage_image as imgsrc %}
+{% placeholder homepage_subheading with CKEditor %}
 
 {%block leftcolsub %}
 <div id="subarticletxt">
@@ -22,6 +23,6 @@
 </div>
 {% placeholder body with CKEditor %}
 <div id="bottombyline">
-<p>{% placeholder bottombyline with TextInput %}</p>
+<p>{% placeholder bottombyline with CKEditor %}</p>
 </div>
 {% endblock %}

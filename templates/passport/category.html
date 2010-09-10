@@ -3,7 +3,7 @@
 {% load_pages %}
 
 {%block leftcolsub %}
-{% imageplaceholder category-image as imgsrc %}
-{% placeholder contnet with CKEditor %}
+{% imageplaceholder category-image as imgsrc %}<br />
+{% placeholder contnet with CKEditor %}<br />
     {% pages_sub_menu current_page %}
 {% endblock %}

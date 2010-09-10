@@ -10,12 +10,12 @@
 			<a style="font-size:18px;text-decoration:underline;color:#FFF " href="{% show_absolute_url article.get_root %}">{{article.get_root.title}}</a>
 	</div>
 	<div class="articlepic">
-		<img height='120' width='120' src='/media/{% show_content article "body-image" %}'/>
+		<img height='120' width='120' src='/media/{% show_content article "homepage_image" %}'/>
 	</div>
     <div class="articletxt">
     	<div class="articlelead"><a href="{% show_absolute_url article %}">{{article.title}}</a></div>
     	<div class="leadbyline">By {{article.author.first_name}} {{article.author.last_name}}</div>
-    	<span class="leadbody"">{% show_content article "subheading"%} </span>
+    	<span class="leadbody"">{% show_content article "homepage_subheading"%} </span>
     </div>
 </div>
 {% endfor %}
