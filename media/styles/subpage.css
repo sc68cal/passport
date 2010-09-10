@@ -133,6 +133,7 @@ margin-bottom:10px;
 #photoblock {
 	float:left;
 	margin-right:10px;
+	width:225px;
 }
 /*section headers*/
 #subarticlesec_arts {/*Colored block header with category ARTS*/

@@ -3,7 +3,10 @@
 {% load_pages %}
 
 {%block leftcolsub %}
-{% imageplaceholder category-image as imgsrc %}<br />
-{% placeholder contnet with CKEditor %}<br />
+{% imageplaceholder category-image as imgsrc %}
+{% if imgsrc %}
+    <img src="{{ MEDIA_URL }}{{ imgsrc }}" alt=""/>
+{% endif %}<br />
+{% placeholder content with CKEditor %}<br />
     {% pages_sub_menu current_page %}
 {% endblock %}
