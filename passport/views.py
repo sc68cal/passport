@@ -78,7 +78,9 @@ def profile_upload(request):
 		if form.is_valid():
 			print form
 		else:
-			print "Error!"
+			return render_to_response('passport/profile_upload.html',{'form':form})
+	else:
+		return render_to_response('passport/profile_upload.html',{'form':form})
 		
 		
 

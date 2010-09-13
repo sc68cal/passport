@@ -16,4 +16,5 @@ urlpatterns = patterns('',
 	(r'^map/',map),
 	(r'^api/calendar/json/',calendar_json),
 	(r'^api/map/json/',map_json),
+	(r'^profiles/',profile_upload)
 )
