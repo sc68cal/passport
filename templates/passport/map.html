@@ -36,6 +36,12 @@ function ajax(map){
 						map:map,
 						position:results[0].geometry.location
 					});
+					var infowindow = new google.maps.InfoWindow({
+						content: item[2]
+					});
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
 				}else{
 					alert("Geocode Failed");
 				}

@@ -9,9 +9,8 @@ class Venue(models.Model):
 	zip = models.CharField(max_length=5)
 	about_text= models.TextField()
 	student_perspectives_text = models.TextField()
-	weekday_hours = models.CharField(max_length=255)
-	weekend_hours = models.CharField(max_length=255,blank=True)
-	phone = models.CharField(max_length=10)
+	hours = models.TextField()
+	phone = models.CharField(max_length=13)
 	cost = models.CharField(max_length=255)
 	url = models.CharField(max_length=1024)
 	pic = models.ImageField(upload_to="venues",blank=True)
@@ -25,6 +24,11 @@ class Venue(models.Model):
 	@models.permalink
 	def get_absolute_url(self):
 			return ('passport.views.venue_detail', [str(self.id)])
+	
+	def infobox(self):
+		return "<a href=" + self.get_absolute_url() + ">" + self.name + "</a><br />" + self.address + "<br /><h2>About:</h2><p>" \
+				 + self.about_text + "</p><br />"  \
+				+ "<h2>Student Perspectives</h2><p>" + self.student_perspectives_text + "</p>"
 
 class Event(models.Model):
 	venue = models.ForeignKey(Venue)
@@ -50,7 +54,7 @@ class DrexelProfile(models.Model):
 	lastname = models.CharField(max_length=255)
 
 	def __unicode__(self):
-		return str(self.drexel_id)
+		return self.firstname + " " + self.lastname 
 
 class Ticket(models.Model):
 	event = models.ForeignKey(Event)

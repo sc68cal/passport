@@ -37,13 +37,12 @@
 <h1>{{object.name}}</h1>
 	<div id="vencolright">
 		<h3>Hours of Operation</h3>
-		<p>Monday-Friday: {{object.weekday_hours}}<br/>
-		Saturday-Sunday: {{object.weekend_hours }}</p>
+		<p>{{object.hours}}</p>
 		<h3>Cost</h3>
 		<p>{{object.cost}}</p></div>
 		<div id="vencolleft">
 					<div id="venuepic">
-				<img src="{{ MEDIA_URL }}{{object.pic}}" border="0" width="220" height="220"/>
+				<img src="{{ MEDIA_URL }}{{object.pic}}" border="0" />
 			</div>
 		{{object.phone}}<br/>
 
