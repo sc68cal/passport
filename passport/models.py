@@ -31,7 +31,6 @@ class Event(models.Model):
 	date = models.DateTimeField()
 	name = models.CharField(max_length=255)
 	number_of_tickets = models.IntegerField()
-	cost = models.CharField(max_length=255)
 	pic = models.ImageField(upload_to='Events',blank=True)
 	url = models.CharField(max_length=1024,blank=True)
 	summary = models.TextField()
