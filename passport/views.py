@@ -60,6 +60,8 @@ def reserve_ticket(request, event_id):
 													drexel_username__exact=form.cleaned_data['drexel_username'])
 			if not drexel_user.count():
 				return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form,'msg': "Invalid Login"})
+			if Ticket.objects.filter(event=event.id).filter(reservation__user=drexel_user).count():
+				return render_to_response('passport/message.html',{'msg': 'You have already reserved a ticket for this event.'})
 			reservation.ticket = results[0]
 			reservation.user = drexel_user[0]
 			reservation.save()
@@ -67,12 +69,12 @@ def reserve_ticket(request, event_id):
 		else:
 			return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	elif results.count():
-		#print "Tickets available"
 		return render_to_response('passport/reservation.html',{'ticket':results[0],"form":form})
 	else:
-		return render_to_response('passport/tickets_unavailable.html')
+		return render_to_response('passport/message.html',{'msg':'No tickets are available for reservation'})
 	
 @login_required
+@transaction.commit_on_success
 def profile_upload(request):
 	
 	if request.method == "POST":

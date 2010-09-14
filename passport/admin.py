@@ -3,6 +3,7 @@
 
 from django.contrib import admin
 from passport.models import *
+from django.shortcuts import redirect
 
 class EventAdmin(admin.ModelAdmin):
 	actions = ['create_tickets','delete_tickets']
@@ -25,11 +26,19 @@ class VenueAdmin(admin.ModelAdmin):
 		js = ('static/js/tiny_mce/tiny_mce.js',
           'js/textarea.js',)
 
+
+class ProfileAdmin(admin.ModelAdmin):
+	search_fields = ['=lastname']
+	
+class ReservationAdmin(admin.ModelAdmin):
+	search_fields = ['user__lastname']
+	
+
 admin.site.register(Venue, VenueAdmin)
 
 
 
 admin.site.register(Event,EventAdmin)
 admin.site.register(Ticket)
-admin.site.register(Reservation)
-admin.site.register(DrexelProfile)
+admin.site.register(Reservation,ReservationAdmin)
+admin.site.register(DrexelProfile,ProfileAdmin)
