@@ -1,15 +1,16 @@
 -- TODO --
+
+
+Homepage:
+Change link style so it isn’t underlined until rollover
+Extend color bar and color bar should be in line with photo, not above it. (just so it matches our designs)
+
+Venue page:
+On the right column, we need the thin gray horizontal line to separate tickets and other areas (directions etc) as shown in designs.
+
+Events:
+Change time to am/pm (midnight is showing up as 00:00
+
+
 * Student database upload
 * change the time to am/pm
-
--- Done --
-* Reserve ticket functionality
-* Print ticket functionality
-
-* venue pages should only show tickets for that venue and articles would show tickets for any venues.
-* Add link to individual venue pages from venue_list
-* change the weekend hours to not be mandatory
-* make the cost field a regular text field
-* Sort venue list by alphabetic
-*  About and Perspectives boxes as multi-line WYSIWYG fields
-* modify the categories template to include a content field above the listing of articles, along with an optional photo field.

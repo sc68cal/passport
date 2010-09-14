@@ -1,7 +1,7 @@
 {% extends 'passport/base.html' %}
 
 {% block leftcolsub %}
-<form method="post">
+<form action "./" enctype="multipart/form-data" method="post">
 	{{form.as_ul}}
 	<input type="submit" name="submit" value="Upload">
 </form>

@@ -18,9 +18,9 @@
 		<h1><a href="{% url passport.views.venue_detail object.id %}">{{object.name}}</a></h1>
 		<div id="vencolright">
 				<h3>Hours of Operation</h3>
-				<p>{{object.hours}}</p>
+				<p>{{object.hours|safe}}</p>
 				<h3>Cost</h3>
-				<p>${{object.cost}}</p>
+				<p>{{object.cost|safe}}</p>
 		</div>
 		<div id="vencolleft">
 			<div id="venuepic">

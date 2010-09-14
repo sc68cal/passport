@@ -8,6 +8,8 @@ from passport.models import Venue, Event,Ticket,Reservation,DrexelProfile
 from datetime import datetime
 from passport.forms import DrexelIDForm,UploadForm
 from django.contrib.auth.decorators import login_required
+from django.core.files.uploadedfile import SimpleUploadedFile
+import csv
 
 
 def venue_list(request):
@@ -72,14 +74,27 @@ def reserve_ticket(request, event_id):
 	
 @login_required
 def profile_upload(request):
-	form = UploadForm(request.POST,request.FILES)
 	
 	if request.method == "POST":
+		form = UploadForm(request.POST,request.FILES)
 		if form.is_valid():
-			print form
+			reader = csv.reader(form.cleaned_data['file'], delimiter=',', quotechar='"')
+			first = True
+			for row in reader:
+				if first:
+					first = False
+				else:
+					tmp = DrexelProfile()
+					tmp.drexel_id = row[0]
+					tmp.firstname = row[2]
+					tmp.lastname = row[1]
+					tmp.drexel_username = row[4]
+					tmp.save()
+			return render_to_response('passport/profile_success.html')
 		else:
 			return render_to_response('passport/profile_upload.html',{'form':form})
 	else:
+		form = UploadForm()
 		return render_to_response('passport/profile_upload.html',{'form':form})
 		
 		
