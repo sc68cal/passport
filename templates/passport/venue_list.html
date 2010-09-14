@@ -23,9 +23,11 @@
 				<p>{{object.cost|safe}}</p>
 		</div>
 		<div id="vencolleft">
+			{% if object.thumbnail %}
 			<div id="venuepic">
 				<img src="{{ MEDIA_URL }}{{object.thumbnail}}" />
 			</div>
+			{% endif %}
 			{{object.phone}}<br/>
 			<a href="{{object.url}}">{{object.url}}</a>
 			<h3>Location</h3>
