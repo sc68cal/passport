@@ -10,10 +10,11 @@ class Venue(models.Model):
 	about_text= models.TextField()
 	student_perspectives_text = models.TextField()
 	hours = models.TextField()
-	phone = models.CharField(max_length=13)
+	phone = models.CharField(max_length=20)
 	cost = models.CharField(max_length=255)
 	url = models.CharField(max_length=1024)
 	pic = models.ImageField(upload_to="venues",blank=True)
+	thumbnail = models.ImageField(upload_to='venues',blank=True)
 
 	def __unicode__(self):
 		return self.name
