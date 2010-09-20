@@ -51,7 +51,7 @@ padding: 0 20px;
 	
 	margin:0px;
 }
-
+.leftcolsub p, leftcolsub ul {font-size: 12px;}
 
 #subticheader {/*Colored block header with category ARTS*/
 

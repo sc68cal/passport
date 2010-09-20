@@ -206,6 +206,11 @@ h4 {
 	margin: 5px 0;
 	text-decoration: none;
 }
+
+.articlelead a:hover{
+	text-decoration: underline;
+}
+
 .articlesec_arts {/*Colored block header with category ARTS*/
 	background: #f65044;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
