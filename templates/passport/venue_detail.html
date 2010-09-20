@@ -37,9 +37,9 @@
 <h1>{{object.name}}</h1>
 	<div id="vencolright">
 		<h3>Hours of Operation</h3>
-		<p>{{object.hours}}</p>
+		<p>{{object.hours|safe}}</p>
 		<h3>Cost</h3>
-		<p>{{object.cost}}</p></div>
+		<p>{{object.cost|safe}}</p></div>
 		<div id="vencolleft">
 					<div id="venuepic">
 				<img src="{{ MEDIA_URL }}{{object.pic}}" border="0" />
