@@ -171,13 +171,13 @@ h4 {
 
 .articleblock {/*Block containing one element- photo, header, teaser, byline*/
 	background:white;
-	margin:10px 0px 0px 0px;
 }
 .articlepic {
 	position: relative;
 	top: -25px;
 	width: 120px;
 	height: 120px;
+	padding-right: 5px;
 }
 .articletxt {/*Contains header, teaser, byline*/
 	float: right;
@@ -187,42 +187,53 @@ h4 {
 	margin-left: -200px;
 	
 }
-.articletxt a { /*category section text*/
+.articleblock a { /*category section text*/
 	color: #FFF;
 	font-size: 18px;
 	text-decoration: none;
 }
-.articletxt a:hover, #articletxt a:active {
+.articleblock a:hover, .articleblock a:active {
 	text-decoration:underline;
+}
+.articleblock a:visited, .articleblock a:link{
+	color: #FFF;
+}
+
+.articlelead a:visited, .articlelead a:link{
+	color: #000;	
+	font-size: 12px;
+	font-weight: bold;
+	margin: 5px 0;
+	text-decoration: none;
 }
 .articlesec_arts {/*Colored block header with category ARTS*/
 	background: #f65044;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
-	margin-left: 120px;
+	margin-left: 130px;
 }
 .articlesec_science {/*Colored block header with category SCIENCE*/
 	background: #7da141;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
-	margin-left: 120px;
+	margin-left: 130px;
 	
 }
 .articlesec_history {/*Colored block header with category HISTORY*/
 	background: #012861;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
-	margin-left: 120px;
+	margin-left: 130px;
 
 }
 .articlesec_performances {/*Colored block header with category PERFORMANCES*/
 	background: #7092f7;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
-	margin-left: 120px;
+	margin-left: 130px;
 
 }
 .articlesec_music {/*Colored block header with category MUSIC*/
 	background: #983699;
 	width: 375px;
 	padding:2px 2px 2px 8px;/*T, R, B, L*/
-	margin-left: 120px;
+	margin-left: 130px;
 
 }
 .articlelead, .articlelead a { /*Headline*/
