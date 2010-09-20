@@ -124,5 +124,5 @@ def calendar_json(request):
 def map_json(request):
 	data = []
 	for venue in Venue.objects.all():
-		data.append([venue.apiaddr(),venue.name,venue.infobox()])
+		data.append([venue.lat,venue.lng,venue.name,venue.infobox()])
 	return HttpResponse(json.dumps(data))

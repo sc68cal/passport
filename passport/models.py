@@ -1,5 +1,6 @@
 from django.db import models
 import PIL
+import urllib
 
 class Venue(models.Model):
 	name = models.CharField(max_length=255)
@@ -15,6 +16,8 @@ class Venue(models.Model):
 	url = models.CharField(max_length=1024)
 	pic = models.ImageField(upload_to="venues",blank=True)
 	thumbnail = models.ImageField(upload_to='venues',blank=True)
+	lat = models.CharField(max_length=255,blank=True)
+	lng = models.CharField(max_length=255,blank=True)
 
 	def __unicode__(self):
 		return self.name
@@ -30,6 +33,25 @@ class Venue(models.Model):
 		return "<a href=" + self.get_absolute_url() + ">" + self.name + "</a><br />" + self.address + "<br /><h2>About:</h2><p>" \
 				 + self.about_text + "</p><br />"  \
 				+ "<h2>Student Perspectives</h2><p>" + self.student_perspectives_text + "</p>"
+				
+	def save(self):
+		res = self.get_lat_long()
+		self.lat = res[0]
+		self.lng = res[1]
+		super(Venue,self).save()
+
+	def get_lat_long(self):
+		output = "csv"
+		location = urllib.quote_plus(self.apiaddr())
+		request = "http://maps.google.com/maps/geo?q=%s&output=%s&" % (location, output)
+		data = urllib.urlopen(request).read()
+		dlist = data.split(',')
+		if dlist[0] == '200':
+			return (dlist[2], dlist[3])
+		else:
+			return ()
+
+	
 
 class Event(models.Model):
 	venue = models.ForeignKey(Venue)

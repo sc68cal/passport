@@ -26,29 +26,23 @@ $j(document).ready( function () {
 function ajax(map){
 	var geocoder;
 	geocoder = new google.maps.Geocoder();
-	
 	$j.getJSON('/passport/api/map/json/',function(json_data){
 		$j.each(json_data, function(i,item){
-			geocoder.geocode({"address":item[0]},function(results,status){
-				if(status == google.maps.GeocoderStatus.OK){
-					var marker = new google.maps.Marker({
-						title: item[1],
-						map:map,
-						position:results[0].geometry.location
-					});
-					var infowindow = new google.maps.InfoWindow({
-						content: item[2]
-					});
-					google.maps.event.addListener(marker, 'click', function() {
-						infowindow.open(map,marker);
-					});
-				}else{
-					alert("Geocode Failed");
-				}
+			var loc = new google.maps.LatLng(item[0],item[1]);
+			var marker = new google.maps.Marker({
+				title: item[2],
+				map:map,
+				position:loc
+			});
+			var infowindow = new google.maps.InfoWindow({
+				content: item[3]
+			});
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map,marker);
 			});
 		});
 	});
-}
+};
 
 </script>
 
