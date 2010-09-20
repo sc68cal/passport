@@ -22,6 +22,7 @@ class EventAdmin(admin.ModelAdmin):
           'js/textarea.js',)
 
 class VenueAdmin(admin.ModelAdmin):
+	exclude = ('lat','lng')
 	class Media:
 		js = ('static/js/tiny_mce/tiny_mce.js',
           'js/textarea.js',)
