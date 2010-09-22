@@ -29,7 +29,7 @@
 	margin: 0 275px 0 0; /* the right margin on this div element creates the column down the right side of the page - no matter how much content the sidebar1 div contains, the column space will remain. You can remove this margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends. */
 	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
 }
-#leftcolsub p {
+#leftcolsub p, #leftcolsub ul{
 	font-size: 12px;
 }
 #leftcolsub h1 {
