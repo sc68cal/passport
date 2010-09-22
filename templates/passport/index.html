@@ -11,11 +11,11 @@
 			<a  href="{% show_absolute_url article.get_root %}">{{article.get_root.title|safe}}</a>
 	</div>
 	<div class="articlepic">
-		<img height='120' width='120' src='/media/{% show_content article "homepage_image" %}'/>
+		<img alt="" height='120' width='120' src='/media/{% show_content article "homepage_image" %}'/>
 	</div>
     <div class="articletxt">
     	<div class="articlelead"><a href="{% show_absolute_url article %}">{{article.title}}</a></div>
-    	<span class="leadbody"">{% show_content article "homepage_subheading"%} </span>
+    	<div class='leadbody' style='line-height: 12px;'>{% show_content article "homepage_subheading"%}</div> 
     	<div class="leadbyline">By {{article.author.first_name}} {{article.author.last_name}}</div>
     </div>
 </div>
@@ -26,7 +26,7 @@
 <div id="rightcol">
             
         
-			<div id="ticpic"> <a href="#"><img width="125" height="69" border="0" src="media/images/tickets.png"></a></div>		
+			<div id="ticpic"> <a href="{% url passport.views.event_list %}"><img alt='' width="125" height="69" border="0" src="media/images/tickets.png" /></a></div>		
 			<div id="ticheader"> <a href="{% url passport.views.event_list %}">Sign Up for E-Tickets</a></div>
           <!--this will Automatically generate the most recent events.-->
      <div id="ticlist"> 
@@ -35,10 +35,10 @@
 					<a href="{% url passport.views.event_detail obj.id %}">{{obj.name}}</a><br />
 					<p>{{obj.date|date:"N j, Y, P"}}, {{obj.venue}}</p>
 				{% endfor %}
-				<p><a href="{% url passport.views.event_calendar %}">View the Calendar > </a></p>
+				<p><a href="{% url passport.views.event_calendar %}">View the Calendar</a></p>
    </div>
   
-        <div id="slide"> <img width="320" height="200" border="0" src="media/images/slide.jpg"></div>
+        <div id="slide"> <img alt ='' width="320" height="200" border="0" src="media/images/slide.jpg" /></div>
         <!--in the news-->
 	 <p><br class="clearfloat" />
 		</p>

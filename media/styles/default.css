@@ -251,7 +251,7 @@ h4 {
 .leadcontainer { /*header, teaser, byline*/
 	margin:10px 0px 0px 0px;
 }
-.leadbody { /*teaser*/
+p.leadbody{ /*teaser*/
 	font-size: 10px;
 	line-height:12px;
 }
