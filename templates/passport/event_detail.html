@@ -8,7 +8,7 @@
 	src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{event.venue.apiaddr}}&size=220x220&sensor=false
 " /></a>
 {%endblock%} {%block leftcolsub %}
-<h1>{{event.name}} at {{event.venue.name}}</h1>
+<h1>{{event.name}} at the {{event.venue.name}}</h1>
 <div class="vencolright">
 	<h3>Date</h3>
 	<p>{{event.date|date:"N j, Y, P"}}</p>
