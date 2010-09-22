@@ -6,10 +6,10 @@
 </div>
 <h2>{{object.ticket.event}}</h2>
 <p>
-{{object.ticket.event.date}}<br />
+{{object.ticket.event.date|date:"N j, Y, P"}}<br />
 {{object.ticket.event.venue.name}}<br />
 {{object.ticket.event.venue.phone}}<br />
-{{object.ticket.event.venue.url}}<br />
+<a href="{{object.ticket.event.venue.url}}">{{object.ticket.event.venue.url}}<br />
 {{object.ticket.event.venue.address}}<br />
 {{object.ticket.event.venue.city}}<br />
 {{object.ticket.event.venue.state}}<br />
