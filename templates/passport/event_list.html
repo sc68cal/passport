@@ -1,16 +1,16 @@
 {% extends 'passport/base.html' %}
-
 {%block leftcolsub %}
 {% for event in object_list %}
-<div class="articleblock">
-	<div class="articlepic">
+<div class="listblock">
+	<div class="listpic">
 		<img height='120' width='120' src='{{MEDIA_URL}}{{event.pic}}'/>
 	</div>
-    <div class="articletxt">
+    <div class="listtxt">
     	<div class="articlelead"><a href="{% url passport.views.event_detail event.id %}">{{event.name}} at {{event.venue}}</a></div>
     	<div class="leadbyline">{{event.date|date:"N j, Y, P"}}</div>
     	<p>
     </div>
 </div>
 {% endfor%}
+
 {% endblock %}

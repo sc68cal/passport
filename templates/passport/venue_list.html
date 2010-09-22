@@ -4,7 +4,7 @@
 <style>
 .venue{
 		padding-bottom:20px;
-		min-height: 300px;
+		min-height: 240px;
 }
 
 
@@ -17,13 +17,13 @@
 	{% for object in object_list %}
 	<div class="venue">
 		<h1><a href="{% url passport.views.venue_detail object.id %}">{{object.name}}</a></h1>
-		<div id="vencolright">
+		<div class="vencolright">
 				<h3>Hours of Operation</h3>
 				<p>{{object.hours|safe}}</p>
 				<h3>Cost</h3>
 				<p>{{object.cost|safe}}</p>
 		</div>
-		<div id="vencolleft">
+		<div class="vencolleft">
 			{% if object.thumbnail %}
 			<div id="venuepic">
 				<img src="{{ MEDIA_URL }}{{object.thumbnail}}" />

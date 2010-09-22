@@ -41,11 +41,11 @@
 	font-weight:normal;
 	margin-top:10px;
 }
-#vencolleft{
+.vencolleft{
 margin: 0 0px 0 0; 	
 padding: 0 20px;
 }
-#vencolright{
+.vencolright{
 	float:right;
 	width:185px;
 	

@@ -587,3 +587,25 @@ ul.dm li a {
 	padding: 0;
 	margin: 0;
 }
+
+
+.listblock {/*Block containing one element- photo, header, teaser, byline*/
+	background:white;
+	width:400px;
+	padding-bottom: 20px;
+}
+.listpic {
+	position: relative;
+	top: -25px;
+	width: 120px;
+	height: 120px;
+	padding-right: 5px;
+}
+.listtxt {/*Contains header, teaser, byline*/
+	float: right;
+	width: 250px;
+	margin-top:-120px;
+	border-bottom:1px solid #bfbfbf;
+	
+}
+x

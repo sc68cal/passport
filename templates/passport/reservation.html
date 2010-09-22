@@ -4,7 +4,7 @@
 	{% if msg %}
 		<h4>{{msg}}</h4>
 	{% endif %}
-	In order to reserve a ticket for {{ticket.event}}, please enter a valid Drexel username and Drexel ID #.
+	In order to reserve a ticket for {{ticket.event.name}} on {{ticket.event.date|date:"N j, Y, P"}}, please enter a valid Drexel username and Drexel ID #.
 	<form name='reserve' action="{% url passport.views.reserve_ticket ticket.event.id %}" method="post">
 	{{form.as_p}}
 	<input type="submit" value="Reserve My Ticket"/>
