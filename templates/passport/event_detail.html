@@ -9,11 +9,11 @@
 " /></a>
 {%endblock%} {%block leftcolsub %}
 <h1>{{event.name}} at {{event.venue.name}}</h1>
-<div id="vencolright">
+<div class="vencolright">
 	<h3>Date</h3>
 	<p>{{event.date|date:"N j, Y, P"}}</p>
 </div>
-<div id="vencolleft">
+<div class="vencolleft">
 	<div id="venuepic">
 		{% if event.pic %} 
 			<img src="{{ MEDIA_URL}}{{event.pic}}" />
