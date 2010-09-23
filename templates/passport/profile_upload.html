@@ -2,7 +2,8 @@
 
 {% block leftcolsub %}
 <form action "./" enctype="multipart/form-data" method="post">
-	{{form.as_ul}}
+	{{form.as_table}}
 	<input type="submit" name="submit" value="Upload">
 </form>
+<h3> Checking the Delete box will delete all old Drexel students stored from the database, before importing the new data.</h3>
 {% endblock %}
