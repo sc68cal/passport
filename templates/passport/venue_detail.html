@@ -30,19 +30,18 @@
 {% endblock %}
 {% block rightcolsub%}
 	<h3>Directions</h3>
-	 <a href="http://maps.google.com/maps?&q={{object.apiaddr}}"><img src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{object.apiaddr}}&size=220x220&sensor=false
-"/></a>
+	 <a href="http://maps.google.com/maps?&amp;q={{object.apiaddr}}"><img alt='' src="http://maps.google.com/maps/api/staticmap?zoom=14&amp;markers={{object.apiaddr}}&amp;size=220x220&amp;sensor=false"/></a>
 {%endblock%}
 {%block leftcolsub %}
 <h1>{{object.name}}</h1>
 	<div class="vencolright">
 		<h3>Hours of Operation</h3>
-		<p>{{object.hours|safe}}</p>
+		{{object.hours|safe}}
 		<h3>Cost</h3>
-		<p>{{object.cost|safe}}</p></div>
+		{{object.cost|safe}}</div>
 		<div class="vencolleft">
 					<div id="venuepic">
-				<img src="{{ MEDIA_URL }}{{object.pic}}" border="0" />
+				<img alt='' src="{{ MEDIA_URL }}{{object.pic}}" border="0" />
 			</div>
 		{{object.phone}}<br/>
 
@@ -57,9 +56,9 @@
  <p><br class="clearfloat" />
 	</p> 
 	 <h3>About</h3>
-	<p>{{object.about_text|safe}}</p>
+	{{object.about_text|safe}}
 <h3>Student Perspectives</h3>
-	<p>{{object.student_perspectives_text|safe}}</p>
+	{{object.student_perspectives_text|safe}}
 </div>
 	<!-- end #mainContent -->
 {% endblock %}
