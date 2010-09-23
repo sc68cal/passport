@@ -1,6 +1,6 @@
 # Create your views here.
 from django.http import HttpResponse
-from django.db import transaction
+from django.db import transaction,connection
 import json
 from django.views.generic import list_detail
 from django.shortcuts import get_object_or_404, render_to_response
@@ -81,6 +81,10 @@ def profile_upload(request):
 		form = UploadForm(request.POST,request.FILES)
 		if form.is_valid():
 			reader = csv.reader(form.cleaned_data['file'], delimiter=',', quotechar='"')
+			if form.cleaned_data['delete']:
+				cursor = connection.cursor()
+				cursor.execute("DELETE FROM passport_reservation")
+				cursor.execute("DELETE FROM passport_drexelprofile")
 			first = True
 			for row in reader:
 				if first:

@@ -12,4 +12,5 @@ class DrexelIDForm(forms.Form):
     
 class UploadForm(forms.Form):
     file = forms.FileField()
+    delete = forms.BooleanField(required=False)
     
