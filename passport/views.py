@@ -16,7 +16,7 @@ def venue_list(request):
 	return list_detail.object_list(request, Venue.objects.all().order_by('name'))
 
 def event_list(request):
-	return list_detail.object_list(request, Event.objects.all().order_by('date'))
+	return list_detail.object_list(request, Event.objects.filter(date__gt=datetime.now()).order_by('date'))
 
 def venue_detail(request, object_id):
 	get_object_or_404(Venue, pk=object_id)
