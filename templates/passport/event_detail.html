@@ -4,9 +4,8 @@
 {% endblock %}
 {% block rightcolsub%}
 <h3>Directions</h3>
-<a href="http://maps.google.com/maps?&q={{event.venue.apiaddr}}"><img
-	src="http://maps.google.com/maps/api/staticmap?zoom=14&markers={{event.venue.apiaddr}}&size=220x220&sensor=false
-" /></a>
+<a href="http://maps.google.com/maps?&amp;q={{event.venue.apiaddr}}"><img
+	alt='' src="http://maps.google.com/maps/api/staticmap?zoom=14&amp;markers={{event.venue.apiaddr}}&amp;size=220x220&amp;sensor=false" /></a>
 {%endblock%} {%block leftcolsub %}
 <h1>{{event.name}} at the {{event.venue.name}}</h1>
 <div class="vencolright">
@@ -16,9 +15,9 @@
 <div class="vencolleft">
 	<div id="venuepic">
 		{% if event.pic %} 
-			<img src="{{ MEDIA_URL}}{{event.pic}}" />
+			<img alt='' src="{{ MEDIA_URL}}{{event.pic}}" />
 		{% else %} 
-			<img src="{{ MEDIA_URL }}{{event.venue.pic}}" />
+			<img alt='' src="{{ MEDIA_URL }}{{event.venue.pic}}" />
 		{% endif %}
 	</div>
 	{{event.venue.phone}}<br />
