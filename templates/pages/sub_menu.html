@@ -2,7 +2,7 @@
 {% for child in children %}
 <div class="listblock">
 	<div class="listpic">
-		<img height='120' width='120' src='/media/{% show_content child "homepage_image" %}'/>
+		<img alt='' height='120' width='120' src='/media/{% show_content child "homepage_image" %}'/>
 	</div>
     <div class="listtxt">
     	<div class="articlelead"><a href="{% show_absolute_url child %}">{{child.title}}</a></div>
