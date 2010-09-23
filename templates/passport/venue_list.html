@@ -1,7 +1,7 @@
 {% extends 'passport/base.html' %}
 {%block head %}
 
-<style>
+<style type='text/css'>
 .venue{
 		padding-bottom:20px;
 		min-height: 240px;
@@ -19,14 +19,14 @@
 		<h1><a href="{% url passport.views.venue_detail object.id %}">{{object.name}}</a></h1>
 		<div class="vencolright">
 				<h3>Hours of Operation</h3>
-				<p>{{object.hours|safe}}</p>
+				{{object.hours|safe}}
 				<h3>Cost</h3>
-				<p>{{object.cost|safe}}</p>
+				{{object.cost|safe}}
 		</div>
 		<div class="vencolleft">
 			{% if object.thumbnail %}
-			<div id="venuepic">
-				<img src="{{ MEDIA_URL }}{{object.thumbnail}}" />
+			<div class="venuepic">
+				<img alt='' src="{{ MEDIA_URL }}{{object.thumbnail}}" />
 			</div>
 			{% endif %}
 			{{object.phone}}<br/>

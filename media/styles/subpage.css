@@ -77,7 +77,7 @@ padding: 0 20px;
 #subticlist p{
 	font-size:10px;
 }
-#venuepic {
+.venuepic {
 	margin:0px 20px 5px 0px;/*T, R, B, L*/
 	float:left;
 }
