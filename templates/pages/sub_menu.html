@@ -1,13 +1,13 @@
 {% load pages_tags %}
 {% for child in children %}
-<div class="articleblock">
-	<div class="articlepic">
+<div class="listblock">
+	<div class="listpic">
 		<img height='120' width='120' src='/media/{% show_content child "homepage_image" %}'/>
 	</div>
-    <div class="articletxt">
+    <div class="listtxt">
     	<div class="articlelead"><a href="{% show_absolute_url child %}">{{child.title}}</a></div>
     	<div class="leadbyline">By {{child.author.first_name}} {{child.author.last_name}}</div>
-    	<span class="leadbody">{% show_content child "subheading" %} </span>
+    	<div class="leadbody">{% show_content child "subheading" %} </div>
     </div>
 </div>
 {% endfor %}
