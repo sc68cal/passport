@@ -8,6 +8,7 @@ from django import template
 from passport.models import Event
 from pages.models import Page
 from news.models import NewsLink
+from datetime import datetime
 
 register = template.Library()
 
@@ -17,7 +18,7 @@ def latest_events(parser,token):
 
 class LatestEventsNode(template.Node):
     def render(self,context):
-        context['latest_events'] = Event.objects.all().order_by('date')[:7]
+        context['latest_events'] = Event.objects.filter(date__gt=datetime.now()).order_by('date')[:7]
         return ''
     
 latest_events = register.tag(latest_events)
@@ -42,3 +43,10 @@ class NewsLinkNode(template.Node):
         return ''
         
 news_links = register.tag(news_links)
+
+
+def replace_spaces(value):
+    return value.replace(' ',"_")
+
+register.filter('replace_spaces', replace_spaces)
+    
