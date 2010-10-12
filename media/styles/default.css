@@ -111,7 +111,7 @@ body {
 	padding: 0 20px;  /* remember that padding is the space inside the div box and margin is the space outside the div box */
 }
 #leftcol p {
-	font-size: 10px;
+	font-size: 12px;
 }
 #leftcol h1 {
 	color:#012861;
@@ -251,12 +251,12 @@ h4 {
 .leadcontainer { /*header, teaser, byline*/
 	margin:10px 0px 0px 0px;
 }
-p.leadbody{ /*teaser*/
-	font-size: 10px;
-	line-height:12px;
+.leadbody p { /*teaser*/
+	font-size: 11px;
+	line-height:13px;
 }
 .leadbyline { /*byline*/
-	font-size: 9px;
+	font-size: 10px;
 	font-weight:bold;
 	margin:5px 0px 5px 0px;/*T, R, B, L*/
 }
@@ -286,7 +286,7 @@ padding:2px 2px 2px 8px;/*T, R, B, L*/
 	width:320px;
 }
 #ticlist p{
-	font-size:10px;
+	font-size:11px;
 }
 /*----------------------------*/
 /*Ibox-footer*/
@@ -592,7 +592,7 @@ ul.dm li a {
 .listblock {/*Block containing one element- photo, header, teaser, byline*/
 	background:white;
 	width:400px;
-	padding-bottom: 20px;
+	padding-top: 20px;
 }
 .listpic {
 	position: relative;

@@ -6,6 +6,8 @@
 <head>
 <title>Drexel University | Cultural Passport</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="The Drexel Cultural Passport offers you the opportunity to explore Philadelphia’s museums, theaters, music, dance and much more. " /> 
+<meta name="keywords" content="Drexel, passport, Philadelphia, ticket, events, freshmen, culture" /> 
 <link rel="stylesheet" type="text/css" href="/media/styles/default.css" />
 <link rel="stylesheet" type="text/css" href="/media/styles/subpage.css" />
 <link rel="Stylesheet" type="text/css" href="/media/styles/colors.css" />
@@ -26,7 +28,25 @@ href="/media/styles/sliver.css" />
 <!--[if IE 7]>    <body class="ie7"> <![endif]-->
 <!--[if IE 6]>    <body class="ie6"> <![endif]-->
 <!--[if lt IE 6]> <body class="ie5"> <![endif]-->
-<!--[if !IE]>-->  </head><body>             <!--<![endif]-->
+<!--[if !IE]>-->  
+
+<!--Google Analytics Code added 092910-->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18706520-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!--end google analytics code-->
+
+</head><body>             <!--<![endif]-->
 <form name="mainform" method="post" action="/passport/" 
 id="mainform">
   <div>
@@ -74,6 +94,7 @@ style="border-width: 0pt;" class="nudge hover" /> </a> </div>
     <!-- End: Drexel Sliver -->
     <!-- Start: Branding Bar Control -->
     <div  class="branding" style=" background-image:url(/media/images/logo_003.jpg);Height:153px;"><!--***placeholder; height is variable-->
+   <a href="/"><img src="/media/images/logo_003.jpg" width="986px" height="153px" border="0"/></a>
     </div>
     <!-- End: Branding Bar Control -->
     <!-- Start: Top Menu -->
@@ -167,11 +188,17 @@ alt="Drexel University" width="117" height="16"/></a> <img src="/media/images/fo
     <!-- End: Drexel Footer -->
     <!-- Start: Top Menu Drops Downs -->
     <div class="ddm m3">
+    <!--edits made to nav-->
       <ul class="dm">
+        <li class="first"><a href="{% url passport.views.venue_list %}">Institution Listings</a></li>
+        <li><a href="{% url passport.views.event_list %}">E-Tickets</a></li>
+        <li><a href="{% url passport.views.map %}">Institution Map</a></li>
+      </ul> <!--end edits-->
+       <!--unedited version: <ul class="dm">
         <li class="first"><a href="{% url passport.views.event_list %}">Performances and E-Tickets</a></li>
         <li><a href="{% url passport.views.venue_list %}">Museums and Visiting Centers</a></li>
         <li><a href="{% url passport.views.map %}">Institution Map</a></li>
-      </ul>
+      </ul>-->
     </div>
     <div class="ddm m5">
       <ul class="dm">

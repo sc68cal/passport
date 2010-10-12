@@ -5,7 +5,7 @@
 {%block leftcolsub %}
 {% imageplaceholder category-image as imgsrc %}
 {% if imgsrc %}
-    <img src="{{ MEDIA_URL }}{{ imgsrc }}" alt=""/>
+ <img src="{{ MEDIA_URL }}{{ imgsrc }}" alt="" border="0"/>
 {% endif %}<br />
 {% placeholder content with CKEditor %}<br />
     {% pages_sub_menu current_page %}

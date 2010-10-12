@@ -11,11 +11,11 @@
 			<a  href="{% show_absolute_url article.get_root %}">{{article.get_root.title|safe}}</a>
 	</div>
 	<div class="articlepic">
-		<img alt="" height='120' width='120' src='/media/{% show_content article "homepage_image" %}'/>
+		<a href="{% show_absolute_url article %}"><img alt="" height='120' width='120' border="0" src='/media/{% show_content article "homepage_image" %}'/></a>
 	</div>
     <div class="articletxt">
     	<div class="articlelead"><a href="{% show_absolute_url article %}">{{article.title}}</a></div>
-    	<div class='leadbody' style='line-height: 12px;'>{% show_content article "homepage_subheading"%}</div> 
+    	<div class="leadbody">{% show_content article "homepage_subheading"%}</div> 
     	<div class="leadbyline">By {{article.author.first_name}} {{article.author.last_name}}</div>
     </div>
 </div>

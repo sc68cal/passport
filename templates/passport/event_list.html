@@ -3,7 +3,7 @@
 {% for event in object_list %}
 <div class="listblock">
 	<div class="listpic">
-		<img alt='' height='120' width='120' src='{{MEDIA_URL}}{{event.pic}}'/>
+		<a href="{% url passport.views.event_detail event.id %}"><img alt='' height='120' width='120' border="0" src='{{MEDIA_URL}}{{event.pic}}'/></a>
 	</div>
     <div class="listtxt">
     	<div class="articlelead"><a href="{% url passport.views.event_detail event.id %}">{{event.name}} at {{event.venue}}</a></div>

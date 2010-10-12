@@ -8,14 +8,15 @@
 {%block leftcolsub %}
 <div id="subarticletxt">
 	<div id="subarticlesec_{{current_page.get_root.title|lower}}">
-		<a href="#">{{current_page.get_root.title}}</a>
+		<a  href="#">{{current_page.get_root.title}}</a>
 	</div>
+    
 </div>
 <h2>{% show_content current_page "title" %}</h2>
 <div id="subhead">{% placeholder subheading with CKEditor %}</div>
 <div id="byline">By {{ current_page.author.first_name  }} {{ current_page.author.last_name  }}</div>
 <div id="photoblock">{% imageplaceholder body-image as imgsrc %}<img src="{{ MEDIA_URL }}{{ imgsrc }}" border="0"
-	width="220" height="220" />
+	width="220"/>
 <div id="locationblock">
 	{% placeholder event with TextInput %}<br />
 	<a href="{% placeholder url with TextInput %}">{% placeholder venue with TextInput %}</a><br />
