@@ -7,9 +7,11 @@
 
 {%block leftcolsub %}
 <div id="subarticletxt">
+	{% if current_page.get_root %}
 	<div id="subarticlesec_{{current_page.get_root.title|lower|replace_spaces}}">
 		<a  href="{% show_absolute_url current_page.get_root %}">{{current_page.get_root.title}}</a>
 	</div>
+	{% endif %}
     
 </div>
 <h2>{% show_content current_page "title" %}</h2>
