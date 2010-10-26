@@ -22,7 +22,7 @@
 {% endblock%}
 {%block eventlist%}
  	<h4> Upcoming events at {{object.name}}</h4>
- 	{% for event in object.event_set.all %}
+ 	{% for event in object.get_upcoming_events %}
 		<a href="{% url passport.views.event_detail event.id %}">{{event.name}}</a><br />
 		<p>{{event.date|date:"N j, Y, P"}}</p> 	
 	{% endfor %}

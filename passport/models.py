@@ -1,6 +1,7 @@
 from django.db import models
 import PIL
 import urllib
+from datetime import datetime
 
 class Venue(models.Model):
 	name = models.CharField(max_length=255)
@@ -50,6 +51,9 @@ class Venue(models.Model):
 			return (dlist[2], dlist[3])
 		else:
 			return ()
+		
+	def get_upcoming_events(self):
+		return self.event_set.filter(date__gt=datetime.now()).order_by('date')
 
 	
 
